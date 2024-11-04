@@ -75,7 +75,7 @@ html_theme_options = {
         },
     ],
     "logo": {
-        "text": "ActuBasics",
+        "text": "Actu-Basics",
         "image_dark": "_static/log.png",
     },
     "use_edit_page_button": True,
