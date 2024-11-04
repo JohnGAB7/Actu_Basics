@@ -1,0 +1,1221 @@
+
+<!DOCTYPE html>
+
+
+<html lang="fr" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Syntaxe et concepts de base &#8212; Documentation ActuBasics </title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=72dce1d2"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'python/syntaxe';</script>
+    <link rel="icon" href="../_static/log.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Structures de Données en Python" href="structures_de_donnees.html" />
+    <link rel="prev" title="Qu’est-ce que Python ?" href="introduction.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="04 novembre 2024"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Bienvenue sur ma page destinée à l'apprentissage de logiciels pour L'Actuaire|Data Scientist</div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/log.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/log.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">ActuBasics</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Introduction.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Python
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Recherche</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/PyData" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/JohnGAB7" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.facebook.com/NivekJGL/" title="Facebook" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-facebook fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Facebook</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.instagram.com/yourusername/" title="Instagram" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-instagram fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Instagram</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Recherche</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Introduction.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Python
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/PyData" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/JohnGAB7" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.facebook.com/NivekJGL/" title="Facebook" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-facebook fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Facebook</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.instagram.com/yourusername/" title="Instagram" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-instagram fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Instagram</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Sections Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Qu’est-ce que Python ?</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Syntaxe et concepts de base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structures_de_donnees.html">Structures de Données en Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliotheques_fondamentales.html">Bibliothèques Python</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Python</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Syntaxe et concepts de base</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="syntaxe-et-concepts-de-base">
+<h1>Syntaxe et concepts de base<a class="headerlink" href="#syntaxe-et-concepts-de-base" title="Lien vers cette rubrique">#</a></h1>
+<p>Python est un langage de programmation à syntaxe simple et lisible, conçu pour la facilité d’utilisation. Ses caractéristiques incluent l’indentation obligatoire, un ensemble de mots-clés réservés, et des types de données intégrés. Python prend également en charge la programmation fonctionnelle, la programmation orientée objet, et permet d’utiliser des générateurs pour une gestion efficace de la mémoire.</p>
+<section id="syntaxe">
+<h2>Syntaxe<a class="headerlink" href="#syntaxe" title="Lien vers cette rubrique">#</a></h2>
+<p>Python privilégie la lisibilité grâce à une syntaxe claire qui impose l’indentation pour délimiter les blocs de code, ce qui favorise l’écriture de code structuré et propre.</p>
+<p><strong>Indentation</strong></p>
+<p>Contrairement à de nombreux autres langages de programmation qui utilisent des accolades <cite>{}</cite> pour délimiter les blocs de code, Python utilise l’indentation. Chaque bloc de code est défini par son indentation, ce qui rend le code plus lisible et plus structuré. L’indentation est cruciale en Python, car elle détermine la hiérarchie des instructions.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x est positif&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x est négatif ou zéro&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Expressions et affectations</strong></p>
+<p>Les variables sont créées par simple affectation, sans déclaration préalable, et le type est déterminé dynamiquement. Python offre une syntaxe concise pour diverses opérations :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;texte&quot;</span>
+<span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Commentaires</strong></p>
+<p>Les commentaires sont ajoutés avec le symbole <code class="docutils literal notranslate"><span class="pre">#</span></code> pour les lignes simples ou <code class="docutils literal notranslate"><span class="pre">'''</span> <span class="pre">...</span> <span class="pre">'''</span></code> pour les blocs multi-lignes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ceci est un commentaire</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Ceci est un commentaire</span>
+<span class="sd">multi-ligne</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="mots-cles-du-langage">
+<h2>Mots-clés du langage<a class="headerlink" href="#mots-cles-du-langage" title="Lien vers cette rubrique">#</a></h2>
+<p>Les mots-clés sont des termes réservés dans Python, destinés à structurer le langage et gérer les contrôles de flux et d’exécution. Ils ne peuvent pas être utilisés comme identifiants (noms de variables ou fonctions). La liste des mots-clés est disponible avec <code class="docutils literal notranslate"><span class="pre">keyword.kwlist</span></code> dans le module <code class="docutils literal notranslate"><span class="pre">keyword</span></code>.</p>
+<div class="important admonition">
+<p class="admonition-title">Remarque</p>
+<p>Python a évolué de manière significative entre la version 2.7 et la 3.x. Certains mots-clés ont été ajoutés, tandis que d’autres sont devenus obsolètes.</p>
+</div>
+<p>En Python 2.x., voici les mots-clés principaux :</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">as</span></code>, <code class="docutils literal notranslate"><span class="pre">assert</span></code>, <code class="docutils literal notranslate"><span class="pre">break</span></code>, <code class="docutils literal notranslate"><span class="pre">class</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code>, <code class="docutils literal notranslate"><span class="pre">def</span></code>, <code class="docutils literal notranslate"><span class="pre">del</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code>, <code class="docutils literal notranslate"><span class="pre">except</span></code>, <code class="docutils literal notranslate"><span class="pre">exec</span></code>, <code class="docutils literal notranslate"><span class="pre">finally</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">from</span></code>, <code class="docutils literal notranslate"><span class="pre">global</span></code>, <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">import</span></code>, <code class="docutils literal notranslate"><span class="pre">in</span></code>, <code class="docutils literal notranslate"><span class="pre">is</span></code>, <code class="docutils literal notranslate"><span class="pre">lambda</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">pass</span></code>, <code class="docutils literal notranslate"><span class="pre">print</span></code>, <code class="docutils literal notranslate"><span class="pre">raise</span></code>, <code class="docutils literal notranslate"><span class="pre">return</span></code>, <code class="docutils literal notranslate"><span class="pre">try</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code>, <code class="docutils literal notranslate"><span class="pre">with</span></code>, <code class="docutils literal notranslate"><span class="pre">yield</span></code>.</p>
+</div></blockquote>
+<p>Avec Python 3.x., certains changements importants sont introduits; <code class="docutils literal notranslate"><span class="pre">print</span></code> et <code class="docutils literal notranslate"><span class="pre">exec</span></code> ne sont plus des mots-clés, mais des fonctions intégrées (<code class="docutils literal notranslate"><span class="pre">builtins</span></code>). <code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code> et <code class="docutils literal notranslate"><span class="pre">nonlocal</span></code> deviennent des mots-clés. <code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code> et <code class="docutils literal notranslate"><span class="pre">None</span></code> étaient présents auparavant mais modifiables (par exemple, <code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">=</span> <span class="pre">1</span></code>). En Python 3, ces valeurs sont fixées et non modifiables.
+<code class="docutils literal notranslate"><span class="pre">async</span></code> et <code class="docutils literal notranslate"><span class="pre">await</span></code> sont ajoutés en Python 3.5 pour supporter l’exécution asynchrone.</p>
+<p>En resumé Python possède 35 mots-clés réservés qui définissent la structure et le flux de contrôle d’un programme.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id1">
+<caption><span class="caption-text">Liste des mots-clés Python sous les versions 2.x.</span><a class="headerlink" href="#id1" title="Lien vers ce tableau">#</a></caption>
+<tbody>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">and</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">as</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">assert</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">break</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">class</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">def</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">del</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">elif</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">else</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">except</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">finally</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">for</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">from</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">global</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">if</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">import</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">continue</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">in</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">is</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">lambda</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">not</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">or</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">pass</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">raise</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">return</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">try</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">while</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">with</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">yield</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">False</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">async</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">await</span></code></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ces mots-clés ne peuvent pas être utilisés comme noms de variables, de fonctions ou de classes.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id2">
+<caption><span class="caption-text">Mots-clés Python avec descriptions</span><a class="headerlink" href="#id2" title="Lien vers ce tableau">#</a></caption>
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Catégorie</p></th>
+<th class="head"><p>Description et Exemples</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Contrôle de flux</strong></p></td>
+<td><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code> : Exécutent du code en fonction de conditions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">while</span></code> : Boucles qui itèrent ou continuent tant qu’une condition est vraie.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">break</span></code> : Interrompt une boucle.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">continue</span></code> : Passe à l’itération suivante de la boucle.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Positif&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Zéro&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Négatif&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>  <span class="c1"># Imprime 0, 1, 3, 4</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><strong>Définition de fonctions</strong></p></td>
+<td><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">def</span></code> : Déclare une fonction.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">return</span></code> : Spécifie la valeur renvoyée par une fonction.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">addition</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><strong>Fonctions anonymes</strong></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">lambda</span></code> : Crée une fonction anonyme.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">carré</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">carré</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>  <span class="c1"># Affiche 16</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><strong>Gestion d’exceptions</strong></p></td>
+<td><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">try</span></code>, <code class="docutils literal notranslate"><span class="pre">except</span></code>, <code class="docutils literal notranslate"><span class="pre">finally</span></code> : Bloc de gestion des erreurs.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">raise</span></code> : Lève une exception manuellement.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
+<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erreur de division par zéro&quot;</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Opération terminée&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><strong>Classes et objets</strong></p></td>
+<td><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">class</span></code> : Déclare une classe.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code> : Référence l’instance courante dans une méthode.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">super</span></code> : Appelle les méthodes de la super-classe.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Personne</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span>
+
+    <span class="k">def</span> <span class="nf">saluer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Bonjour, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nom</span><span class="si">}</span><span class="s2">&quot;</span>
+
+<span class="n">personne</span> <span class="o">=</span> <span class="n">Personne</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">personne</span><span class="o">.</span><span class="n">saluer</span><span class="p">())</span>  <span class="c1"># Affiche &quot;Bonjour, Alice&quot;</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><strong>Types spéciaux et gestion du contexte</strong></p></td>
+<td><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code> : Valeurs booléennes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code> : Absence de valeur.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">with</span></code>, <code class="docutils literal notranslate"><span class="pre">as</span></code> : Gèrent le contexte pour des ressources comme les fichiers.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;fichier.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">contenu</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p><strong>Programmation asynchrone</strong></p></td>
+<td><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">async</span></code> : Définit une fonction asynchrone.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">await</span></code> : Attends le résultat d’une fonction asynchrone.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bonjour&quot;</span><span class="p">)</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Monde&quot;</span><span class="p">)</span>
+
+<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>  <span class="c1"># Exécute la fonction asynchrone</span>
+</pre></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p><strong>Opérateurs logiques et de comparaison</strong></p></td>
+<td><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code> : Opérateurs logiques pour combiner des expressions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is</span></code>, <code class="docutils literal notranslate"><span class="pre">in</span></code> : Testent l’identité et l’appartenance.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="ow">is</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># True car a et b pointent vers le même objet</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="ow">in</span> <span class="n">a</span><span class="p">)</span>  <span class="c1"># True car 2 est dans la liste</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="types-de-base">
+<h2>Types de base<a class="headerlink" href="#types-de-base" title="Lien vers cette rubrique">#</a></h2>
+<p>Python fournit plusieurs types ou objet de base pour représenter différentes catégories de données. Ces types sont classés en numériques, séquentiels, ensembles, mappages, booléens, et spéciaux.</p>
+<p><strong>Les types numériques</strong></p>
+<p>Les types numériques sont utilisés pour manipuler les nombres.</p>
+<ul>
+<li><p><strong>int</strong> : Représente des entiers relatifs. Avant la version 3.0, ce type était dénommé <cite>long</cite>, et le type <cite>int</cite> correspondait à un entier de 32 ou 64 bits. Toutefois, une conversion automatique en type <cite>long</cite> évitait tout débordement. Maintenant, ce type correspond aux entiers relatifs avec une précision illimitée sans restriction de taille.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">42</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>float</strong> : Représente des nombres à virgule flottante, équivalent au type <cite>double</cite> du langage C. Ce type peut représenter tout nombre entre −1,7 × 10^308 et 1,7 × 10^308 sur les plateformes conformes à l’IEEE 754.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mf">3.14159</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>complex</strong> : Représente des nombres complexes, c’est-à-dire deux nombres flottants (une partie réelle et une partie imaginaire).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="n">j</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>Les types itérables</strong></p>
+<ul>
+<li><p><strong>str</strong> : Représente une chaîne de caractères. À partir de la version 3.0, les chaînes de caractères sont en Unicode sur 16 ou 32 bits. Les objets <cite>str</cite> sont immuables. Dans les versions précédentes, ces objets étaient respectivement de type <cite>unicode</cite> et <cite>str</cite>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">texte</span> <span class="o">=</span> <span class="s2">&quot;Bonjour&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>list</strong> : Les listes sont des tableaux dynamiques qui acceptent des types de données hétérogènes. Elles s’étendent automatiquement pour s’adapter à l’ajout d’éléments.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;deux&quot;</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>tuple</strong> : Les tuples (ou n-uplets) sont des listes immuables d’objets, qui peuvent être de types hétérogènes. Une fois créés, leur contenu ne peut pas être modifié.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mon_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;deux&quot;</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>set</strong> : Un ensemble est une collection non ordonnée d’objets uniques. Les ensembles ne peuvent pas contenir de doublons et ne conservent pas l’ordre des éléments.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mon_ensemble</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>frozenset</strong> : Forme immuable d’un ensemble. Une fois créé, son contenu ne peut pas être modifié.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mon_frozenset</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>dict</strong> : Dictionnaires pour stocker des paires clé-valeur. Les dictionnaires sont des tableaux associatifs permettant d’associer une clé unique à une valeur.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mon_dico</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;clé1&quot;</span><span class="p">:</span> <span class="s2">&quot;valeur1&quot;</span><span class="p">,</span> <span class="s2">&quot;clé2&quot;</span><span class="p">:</span> <span class="s2">&quot;valeur2&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>bytes</strong> : Chaînes d’octets immuables, utilisées pour les données binaires.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">données</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;Octets&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>bytearray</strong> : Chaînes d’octets modifiables.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">données_modifiables</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;Octets&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>file</strong> : Correspond à un fichier obtenu grâce à la méthode <cite>open()</cite>. Il permet de lire ou d’écrire des données dans des fichiers.</p></li>
+</ul>
+<p>Il existe également d’autres types d’objets itérables, comme <cite>range</cite>, obtenu via la méthode <cite>range()</cite>, ainsi que les types associés aux méthodes de dictionnaires <cite>.keys()</cite>, <cite>.values()</cite>, et <cite>.items()</cite>. La plupart d’entre eux sont immuables.</p>
+<p>Les objets itérables sont parcourus à l’aide d’une boucle <cite>for</cite> de la manière suivante :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">objet_iterable</span><span class="p">:</span>
+    <span class="n">traiter</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Pour une chaîne de caractères, l’itération se fait caractère par caractère.</p>
+<p>Il existe également d’autres objets, n’étant ni numériques ni itérables</p>
+<p><strong>Types booléens</strong></p>
+<ul>
+<li><p><strong>bool</strong> : Représente les valeurs <code class="docutils literal notranslate"><span class="pre">True</span></code> et <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">est_vrai</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>None</strong> : Indique l’absence de valeur.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">valeur_inconnue</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>Autres types spéciaux</strong></p>
+<p>Python fournit des types pour des opérations avancées et des manipulations d’objets.</p>
+<ul>
+<li><p><strong>memoryview</strong> : Vue mémoire sur des objets bytearray, bytes, ou autres tampons.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vue</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;Exemple&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<ul>
+<li><p><strong>slice</strong> : Représente une partie d’une séquence.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sous_liste</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>type</strong> : Retourne le type d’un objet.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">type_de_x</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>object</strong> : Classe de base dont tous les objets Python héritent.</p></li>
+<li><p><strong>NotImplementedType</strong> : Indique l’absence d’implémentation d’une méthode ou d’un type. Utilisé dans les opérations qui ne sont pas prises en charge.</p></li>
+<li><p><strong>exception</strong> : Type utilisé pour les messages d’erreur levés lors de l’exécution d’un programme.</p></li>
+<li><p><strong>function</strong> : Type d’une fonction, utilisé lors de l’appel des mots-clés <cite>def</cite> et <cite>lambda</cite>.</p></li>
+<li><p><strong>module</strong> : Type d’un module, utilisé lors de l’importation avec les mots-clés <cite>import</cite> et <cite>from</cite>.</p></li>
+</ul>
+</section>
+<section id="programmation-fonctionnelle">
+<h2>Programmation fonctionnelle<a class="headerlink" href="#programmation-fonctionnelle" title="Lien vers cette rubrique">#</a></h2>
+<p>La programmation fonctionnelle est un paradigme qui traite le calcul comme l’évaluation de fonctions mathématiques et évite l’état mutable et les effets de bord. Python prend en charge la programmation fonctionnelle en permettant d’utiliser des fonctions comme objets de première classe, c’est-à-dire que les fonctions peuvent être passées en arguments, retournées par d’autres fonctions, et assignées à des variables.</p>
+<p><strong>Caractéristiques de la Programmation Fonctionnelle</strong></p>
+<ol class="arabic">
+<li><p><strong>Fonctions de Première Classe</strong> :
+Les fonctions peuvent être manipulées comme n’importe quel autre objet. Elles peuvent être passées en arguments, retournées par d’autres fonctions, ou assignées à des variables.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">carre</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+
+<span class="k">def</span> <span class="nf">appliquer</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">appliquer</span><span class="p">(</span><span class="n">carre</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># Affiche 25</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Fonctions Anonymes (`lambda`)</strong> :
+Les fonctions anonymes, ou <cite>lambda</cite>, permettent de créer de petites fonctions sans avoir besoin de les nommer.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ajouter</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ajouter</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>  <span class="c1"># Affiche 7</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Fonctions d’Ordre Supérieur</strong> :
+Ce sont des fonctions qui prennent d’autres fonctions en argument ou retournent des fonctions. Cela permet de créer des abstractions et de réutiliser du code.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">appliquer_deux_fois</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">appliquer_deux_fois</span><span class="p">(</span><span class="n">carre</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># Affiche 81</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Immutabilité</strong> :
+La programmation fonctionnelle privilégie l’utilisation de structures de données immuables, ce qui réduit les effets de bord et facilite le raisonnement sur le code.</p></li>
+<li><p><strong>Récursion</strong> :
+Les fonctions peuvent s’appeler elles-mêmes pour résoudre des problèmes. La récursion est souvent utilisée en programmation fonctionnelle pour remplacer les boucles.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorielle</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorielle</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">factorielle</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># Affiche 120</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p><strong>Outils et Modules de Programmation Fonctionnelle en Python</strong></p>
+<p>Python fournit plusieurs outils et modules qui facilitent la programmation fonctionnelle :</p>
+<ul>
+<li><p><strong>`map()`</strong> : Applique une fonction à tous les éléments d’un itérable et renvoie un nouvel itérable.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">resultats</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">carre</span><span class="p">,</span> <span class="n">nombres</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultats</span><span class="p">)</span>  <span class="c1"># Affiche [1, 4, 9, 16]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>`filter()`</strong> : Filtre les éléments d’un itérable en appliquant une fonction de test qui renvoie <cite>True</cite> ou <cite>False</cite>.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pairs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">nombres</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pairs</span><span class="p">)</span>  <span class="c1"># Affiche [2, 4]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p><strong>`reduce()`</strong> : Réduit un itérable à une seule valeur en appliquant successivement une fonction. Ce module nécessite l’importation de <cite>functools</cite>.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+
+<span class="n">somme</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">nombres</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">somme</span><span class="p">)</span>  <span class="c1"># Affiche 10</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p><strong>Avantages de la Programmation Fonctionnelle</strong></p>
+<ul class="simple">
+<li><p><strong>Simplicité et Lisibilité</strong> : La séparation des préoccupations et l’utilisation de fonctions pures rendent le code plus facile à lire et à maintenir.</p></li>
+<li><p><strong>Tests Faciles</strong> : Les fonctions pures sont plus simples à tester, car leur sortie dépend uniquement de leurs entrées.</p></li>
+<li><p><strong>Concurrence</strong> : La programmation fonctionnelle facilite la gestion de la concurrence, car les fonctions n’ont pas d’état mutable.</p></li>
+</ul>
+<p><strong>Inconvénients</strong></p>
+<ul class="simple">
+<li><p><strong>Performance</strong> : La récursion peut être moins performante que les boucles pour certains problèmes, en particulier en raison de la surcharge d’appels de fonction.</p></li>
+<li><p><strong>Courbe d’Apprentissage</strong> : Les développeurs venant de paradigmes impératifs peuvent trouver la transition vers la programmation fonctionnelle plus difficile.</p></li>
+</ul>
+<p>La programmation fonctionnelle en Python offre un moyen puissant et flexible d’écrire du code clair et concis. En utilisant des fonctions de première classe, des fonctions anonymes, et des outils comme <cite>map()</cite>, <cite>filter()</cite>, et <cite>reduce()</cite>, les développeurs peuvent tirer parti des avantages de ce paradigme tout en profitant des capacités de Python.</p>
+</section>
+<section id="programmation-orientee-objet">
+<h2>Programmation orientée objet<a class="headerlink" href="#programmation-orientee-objet" title="Lien vers cette rubrique">#</a></h2>
+<p>La programmation orientée objet (POO) est un paradigme qui utilise des « objets » pour modéliser des entités du monde réel. Les objets combinent à la fois des données et des comportements, permettant ainsi une approche modulaire et réutilisable pour la conception de logiciels. Python prend en charge la POO de manière complète, offrant des mécanismes pour définir des classes, des objets, créer des instances, et utiliser l’héritage.</p>
+<p><strong>Concepts Clés de la POO</strong></p>
+<ol class="arabic">
+<li><p><strong>Classes et Objets</strong> :
+- Une classe est une structure qui définit un type d’objet, incluant des attributs (données) et des méthodes (comportements).
+- Un objet est une instance d’une classe. Chaque objet a ses propres valeurs d’attributs.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Voiture</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">marque</span><span class="p">,</span> <span class="n">modele</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">marque</span> <span class="o">=</span> <span class="n">marque</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modele</span> <span class="o">=</span> <span class="n">modele</span>
+
+    <span class="k">def</span> <span class="nf">demarrer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La </span><span class="si">{self.marque}</span><span class="s2"> </span><span class="si">{self.modele}</span><span class="s2"> démarre.&quot;</span><span class="p">)</span>
+
+<span class="n">ma_voiture</span> <span class="o">=</span> <span class="n">Voiture</span><span class="p">(</span><span class="s2">&quot;Toyota&quot;</span><span class="p">,</span> <span class="s2">&quot;Corolla&quot;</span><span class="p">)</span>
+<span class="n">ma_voiture</span><span class="o">.</span><span class="n">demarrer</span><span class="p">()</span>  <span class="c1"># Affiche &quot;La Toyota Corolla démarre.&quot;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<ul class="simple">
+<li><p><strong>class</strong> : Déclare une nouvelle classe.</p></li>
+<li><p><strong>self</strong> : Représente l’instance actuelle.</p></li>
+<li><p><strong>__init__</strong> : Initialise une nouvelle instance.</p></li>
+</ul>
+<ol class="arabic" start="2">
+<li><p><strong>Attributs</strong> :
+- Les attributs sont des variables qui stockent des données relatives à un objet. Ils peuvent être définis à l’aide de <cite>self</cite> dans la méthode spéciale <cite>__init__</cite>.</p></li>
+<li><p><strong>Méthodes</strong> :
+- Les méthodes sont des fonctions définies à l’intérieur d’une classe qui décrivent les comportements d’un objet. Les méthodes doivent toujours inclure <cite>self</cite> comme premier paramètre pour faire référence à l’instance de l’objet.</p></li>
+<li><p><strong>Héritage</strong> :
+- L’héritage permet de créer une nouvelle classe (classe dérivée) à partir d’une classe existante (classe de base), en réutilisant les attributs et méthodes de la classe de base.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Vehicule</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">demarrer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Le véhicule démarre.&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Moto</span><span class="p">(</span><span class="n">Vehicule</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">faire_du_bruit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La moto fait vroom!&quot;</span><span class="p">)</span>
+
+<span class="n">ma_moto</span> <span class="o">=</span> <span class="n">Moto</span><span class="p">()</span>
+<span class="n">ma_moto</span><span class="o">.</span><span class="n">demarrer</span><span class="p">()</span>  <span class="c1"># Affiche &quot;Le véhicule démarre.&quot;</span>
+<span class="n">ma_moto</span><span class="o">.</span><span class="n">faire_du_bruit</span><span class="p">()</span>  <span class="c1"># Affiche &quot;La moto fait vroom!&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Polymorphisme</strong> :
+- Le polymorphisme permet d’utiliser des méthodes ayant le même nom mais un comportement différent en fonction de l’objet. Cela permet de traiter des objets de classes différentes de manière uniforme.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Chat</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">parler</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Miaulement&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Chien</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">parler</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Aboiement&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">faire_parler</span><span class="p">(</span><span class="n">animal</span><span class="p">):</span>
+    <span class="n">animal</span><span class="o">.</span><span class="n">parler</span><span class="p">()</span>
+
+<span class="n">mon_chat</span> <span class="o">=</span> <span class="n">Chat</span><span class="p">()</span>
+<span class="n">mon_chien</span> <span class="o">=</span> <span class="n">Chien</span><span class="p">()</span>
+<span class="n">faire_parler</span><span class="p">(</span><span class="n">mon_chat</span><span class="p">)</span>  <span class="c1"># Affiche &quot;Miaulement&quot;</span>
+<span class="n">faire_parler</span><span class="p">(</span><span class="n">mon_chien</span><span class="p">)</span>  <span class="c1"># Affiche &quot;Aboiement&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Encapsulation</strong> :
+- L’encapsulation consiste à regrouper des données (attributs) et des comportements (méthodes) dans une classe tout en restreignant l’accès direct à certaines données. Les attributs peuvent être rendus privés en les préfixant avec un double underscore <cite>__</cite>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CompteBancaire</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solde</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__solde</span> <span class="o">=</span> <span class="n">solde</span>  <span class="c1"># Attribut privé</span>
+
+    <span class="k">def</span> <span class="nf">deposer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">montant</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__solde</span> <span class="o">+=</span> <span class="n">montant</span>
+
+    <span class="k">def</span> <span class="nf">afficher_solde</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Solde: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__solde</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">compte</span> <span class="o">=</span> <span class="n">CompteBancaire</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">compte</span><span class="o">.</span><span class="n">deposer</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">compte</span><span class="o">.</span><span class="n">afficher_solde</span><span class="p">()</span>  <span class="c1"># Affiche &quot;Solde: 1500&quot;</span>
+<span class="c1"># print(compte.__solde)  # Provoque une erreur</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p><strong>Avantages de la Programmation Orientée Objet</strong></p>
+<ul class="simple">
+<li><p><strong>Modularité</strong> : Le code est organisé en modules, ce qui facilite sa maintenance et sa réutilisation.</p></li>
+<li><p><strong>Réutilisation</strong> : Les classes peuvent être réutilisées et étendues, ce qui réduit le besoin de duplication de code.</p></li>
+<li><p><strong>Abstraction</strong> : Les détails d’implémentation sont cachés, permettant aux utilisateurs d’interagir avec les objets sans connaître leur fonctionnement interne.</p></li>
+</ul>
+<p><strong>Inconvénients</strong></p>
+<ul class="simple">
+<li><p><strong>Complexité</strong> : La POO peut introduire une complexité supplémentaire dans la conception et la compréhension du code, surtout pour les petits projets.</p></li>
+<li><p><strong>Performance</strong> : L’utilisation intensive des classes et des objets peut parfois avoir un impact sur la performance, en raison de la surcharge associée à la gestion des objets.</p></li>
+</ul>
+<p>La programmation orientée objet est un puissant paradigme de développement qui permet de créer des logiciels modulaires et réutilisables. En exploitant les concepts de classes, d’héritage, de polymorphisme et d’encapsulation, les développeurs peuvent créer des applications plus maintenables et plus faciles à comprendre.</p>
+</section>
+<section id="methodes-speciales-et-surcharge-d-operateurs">
+<h2>Méthodes spéciales et surcharge d’opérateurs<a class="headerlink" href="#methodes-speciales-et-surcharge-d-operateurs" title="Lien vers cette rubrique">#</a></h2>
+<p>Les méthodes spéciales (ou « dunder ») en Python, également appelées méthodes magiques, sont des fonctions définies dans les classes qui permettent de définir le comportement d’un objet en réponse à certaines opérations. Elles sont entourées de doubles underscores (par exemple, <cite>__init__</cite>). La surcharge d’opérateurs consiste à redéfinir le comportement des opérateurs (comme <cite>+</cite>, <cite>-</cite>, <cite>*</cite>, etc.) pour les objets personnalisés en utilisant ces méthodes spéciales.</p>
+</section>
+<section id="methodes-speciales-courantes">
+<h2>Méthodes Spéciales Courantes<a class="headerlink" href="#methodes-speciales-courantes" title="Lien vers cette rubrique">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Constructeur (`__init__`)</strong> :
+- La méthode <cite>__init__</cite> est appelée automatiquement lors de la création d’une instance d’une classe. Elle permet d’initialiser les attributs de l’objet.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>  <span class="c1"># Affiche &quot;3 4&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Représentation en chaîne (`__str__` et `__repr__`)</strong> :
+- <cite>__str__</cite> définit la représentation en chaîne d’un objet pour les utilisateurs. <cite>__repr__</cite> est utilisé pour la représentation en chaîne pour le débogage et doit renvoyer une chaîne qui pourrait être utilisée pour recréer l’objet.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Personne</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Personne: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nom</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Personne(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nom</span><span class="si">!r}</span><span class="s2">)&quot;</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Personne</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>  <span class="c1"># Affiche &quot;Personne: Alice&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>  <span class="c1"># Affiche &quot;Personne(&#39;Alice&#39;)&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Surcharge des opérateurs</strong> :
+- Les opérateurs peuvent être surchargés en définissant des méthodes spéciales correspondantes.</p>
+<ul>
+<li><p><strong>Addition (`__add__`)</strong> :
+- La méthode <cite>__add__</cite> permet de définir le comportement de l’opérateur <cite>+</cite> pour les objets de votre classe.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NombreComplexe</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">re</span><span class="p">,</span> <span class="n">im</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">re</span> <span class="o">=</span> <span class="n">re</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">im</span> <span class="o">=</span> <span class="n">im</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">NombreComplexe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">re</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">re</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">im</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">im</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">re</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">im</span><span class="si">}</span><span class="s2">i&quot;</span>
+
+<span class="n">z1</span> <span class="o">=</span> <span class="n">NombreComplexe</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">z2</span> <span class="o">=</span> <span class="n">NombreComplexe</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">z3</span> <span class="o">=</span> <span class="n">z1</span> <span class="o">+</span> <span class="n">z2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z3</span><span class="p">)</span>  <span class="c1"># Affiche &quot;4 + 6i&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Égalité (`__eq__`)</strong> :
+- La méthode <cite>__eq__</cite> permet de définir le comportement de l’opérateur <cite>==</cite> pour les objets de votre classe.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span>  <span class="c1"># Affiche True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p3</span><span class="p">)</span>  <span class="c1"># Affiche False</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Autres méthodes spéciales</strong> :
+- <cite>__len__</cite> : Définit le comportement de la fonction <cite>len()</cite>.
+- <cite>__getitem__</cite> : Permet l’accès à un élément via des indices (par exemple, <cite>obj[key]</cite>).
+- <cite>__setitem__</cite> : Permet de définir un élément via des indices.
+- <cite>__delitem__</cite> : Permet de supprimer un élément via des indices.
+- <cite>__iter__</cite> : Rend un objet itérable en renvoyant un itérateur.
+- <cite>__next__</cite> : Définit le comportement de l’itérateur pour renvoyer l’élément suivant.</p></li>
+</ol>
+<p>Exemple d’itérabilité personnalisée :</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Compteur</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">limite</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">limite</span> <span class="o">=</span> <span class="n">limite</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">limite</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">current</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">StopIteration</span>
+
+<span class="n">compteur</span> <span class="o">=</span> <span class="n">Compteur</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="n">compteur</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>  <span class="c1"># Affiche 1, 2, 3</span>
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+<section id="generateurs">
+<h2>Générateurs<a class="headerlink" href="#generateurs" title="Lien vers cette rubrique">#</a></h2>
+<p>Les générateurs sont une fonctionnalité puissante de Python qui permet de créer des itérateurs de manière simple et efficace. Ils permettent de produire des séquences de valeurs sans avoir à les stocker toutes en mémoire, ce qui les rend particulièrement utiles pour gérer de grandes quantités de données ou des flux de données.</p>
+<p><strong>Définition d’un Générateur</strong></p>
+<p>Un générateur est une fonction qui utilise le mot-clé <cite>yield</cite> au lieu de <cite>return</cite>. Lorsqu’un générateur est appelé, il renvoie un itérateur qui peut être utilisé pour générer des valeurs une par une, plutôt que de calculer toutes les valeurs à l’avance.</p>
+<p>Voici un exemple de générateur qui produit une séquence de nombres carrés :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_squares</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">yield</span> <span class="n">i</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p><strong>Utilisation d’un Générateur</strong></p>
+<p>Pour utiliser un générateur, vous pouvez l’itérer avec une boucle <cite>for</cite>, ou utiliser la fonction <cite>next()</cite> pour obtenir les valeurs une à une.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="n">generate_squares</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">square</span> <span class="ow">in</span> <span class="n">squares</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">square</span><span class="p">)</span>  <span class="c1"># Affiche 0, 1, 4, 9, 16</span>
+
+<span class="c1"># Ou en utilisant next()</span>
+<span class="n">squares</span> <span class="o">=</span> <span class="n">generate_squares</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">squares</span><span class="p">))</span>  <span class="c1"># Affiche 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">squares</span><span class="p">))</span>  <span class="c1"># Affiche 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">squares</span><span class="p">))</span>  <span class="c1"># Affiche 4</span>
+<span class="c1"># print(next(squares))  # Lève une exception StopIteration</span>
+</pre></div>
+</div>
+<p><strong>Avantages des Générateurs</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Mémoire Efficace</strong> :
+- Les générateurs ne chargent pas toutes les valeurs en mémoire, ce qui les rend particulièrement utiles pour travailler avec des ensembles de données volumineux.</p></li>
+<li><p><strong>Exécution Paresseuse</strong> :
+- Les générateurs ne calculent les valeurs que lorsque cela est nécessaire, ce qui peut améliorer les performances et réduire le temps d’exécution dans certains cas.</p></li>
+<li><p><strong>Code Plus Lisible</strong> :
+- Les générateurs permettent d’écrire du code plus clair et plus concis en remplaçant les classes d’itérateurs par des fonctions simples.</p></li>
+</ol>
+<p><strong>Exemple de Générateur avec État</strong></p>
+<p>Les générateurs peuvent également maintenir un état entre les appels grâce à leur nature. Voici un exemple d’un générateur qui produit une séquence infinie de nombres naturels :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_up_to</span><span class="p">(</span><span class="nb">max</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;=</span> <span class="nb">max</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">count</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">counter</span> <span class="o">=</span> <span class="n">count_up_to</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">counter</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>  <span class="c1"># Affiche 1, 2, 3</span>
+</pre></div>
+</div>
+<p>Les générateurs sont un outil précieux en Python pour créer des itérateurs légers et efficaces. Ils facilitent le traitement des flux de données et permettent de conserver la mémoire tout en maintenant un code clair et facile à comprendre. Grâce aux générateurs, il est possible d’écrire des programmes qui gèrent de grandes quantités de données de manière efficace et élégante.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="introduction.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title">Qu’est-ce que Python ?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="structures_de_donnees.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title">Structures de Données en Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, {John GABARY}.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
