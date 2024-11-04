@@ -1,0 +1,748 @@
+
+<!DOCTYPE html>
+
+
+<html lang="fr" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Qu’est-ce que Python ? &#8212; Documentation ActuBasics </title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../_static/documentation_options.js?v=72dce1d2"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'python/introduction';</script>
+    <link rel="icon" href="../_static/log.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Syntaxe et concepts de base" href="syntaxe.html" />
+    <link rel="prev" title="Python" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="04 novembre 2024"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Bienvenue sur ma page destinée à l'apprentissage de logiciels pour L'Actuaire|Data Scientist</div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/log.png" class="logo__image only-light" alt=""/>
+    <img src="../_static/log.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">ActuBasics</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Introduction.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Python
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Recherche</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/PyData" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/JohnGAB7" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.facebook.com/NivekJGL/" title="Facebook" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-facebook fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Facebook</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.instagram.com/yourusername/" title="Instagram" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-instagram fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Instagram</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Recherche</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Introduction.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Python
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/PyData" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/JohnGAB7" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.facebook.com/NivekJGL/" title="Facebook" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-facebook fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Facebook</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.instagram.com/yourusername/" title="Instagram" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-instagram fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Instagram</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Sections Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Qu’est-ce que Python ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntaxe.html">Syntaxe et concepts de base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="structures_de_donnees.html">Structures de Données en Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliotheques_fondamentales.html">Bibliothèques Python</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Python</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Qu’est-ce que Python ?</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="quest-ce-que-python">
+<h1>Qu’est-ce que Python ?<a class="headerlink" href="#quest-ce-que-python" title="Lien vers cette rubrique">#</a></h1>
+<p>Python est un langage de programmation puissant et polyvalent, parfait pour une multitude d’applications telles que l’automatisation, le développement de jeux, et la création d’applications graphiques (GUI). Sa simplicité, sa compatibilité multi-plateforme, et sa capacité à permettre un développement rapide et efficace en font un choix privilégié pour les développeurs de tous niveaux.</p>
+<section id="caracteristiques-et-avantages-de-python">
+<h2>Caractéristiques et avantages de Python<a class="headerlink" href="#caracteristiques-et-avantages-de-python" title="Lien vers cette rubrique">#</a></h2>
+<ul class="simple">
+<li><p><strong>Simplicité d’utilisation</strong> : Python se distingue par sa syntaxe claire et intuitive, ce qui facilite l’apprentissage aussi bien pour les débutants que pour les professionnels. Sa lisibilité et sa structure logique permettent de rédiger du code propre et maintenable.</p></li>
+<li><p><strong>Portabilité</strong> : Disponible sur les systèmes d’exploitation Windows, macOS et Linux, Python assure une large portée d’utilisation. Un code écrit sur un système peut être exécuté sans modification sur un autre, ce qui en fait un langage extrêmement portable.</p></li>
+<li><p><strong>Développement rapide</strong> : Grâce à ses types de données de haut niveau et à une vaste bibliothèque standard, Python permet un développement rapide et efficace. Les développeurs peuvent se concentrer sur la résolution des problèmes plutôt que sur les détails de la programmation.</p></li>
+<li><p><strong>Langage interprété</strong> : L’absence de compilation préalable accélère le cycle de développement, permettant des tests et des itérations rapides. Cela rend Python particulièrement adapté au prototypage rapide et aux projets de grande envergure.</p></li>
+<li><p><strong>Extensibilité et Intégration</strong> : Python permet l’intégration de modules écrits en C/C++ pour optimiser les performances lors d’opérations critiques. De plus, il peut interagir avec d’autres langages et technologies, facilitant ainsi l’intégration dans des environnements de développement complexes.</p></li>
+<li><p><strong>Communauté et Support</strong> : Python bénéficie d’une vaste communauté d’utilisateurs et de développeurs. Cette communauté active contribue à une riche documentation, de nombreux forums d’entraide, et une grande quantité de bibliothèques et de frameworks disponibles en open source.</p></li>
+<li><p><strong>Multi-paradigme</strong> : Python supporte la programmation procédurale, orientée objet et fonctionnelle, offrant ainsi une grande flexibilité aux développeurs pour choisir le paradigme le plus approprié à leur projet.</p></li>
+<li><p><strong>Typage dynamique</strong> : Les types de variables sont déterminés au moment de l’exécution, ce qui permet une grande flexibilité et réduit le besoin de déclarations de type explicites.</p></li>
+<li><p><strong>Gestion automatique de la mémoire</strong> : Python utilise un ramasse-miettes (garbage collector) pour gérer la mémoire, ce qui simplifie la gestion des ressources pour les développeurs.</p></li>
+<li><p><strong>Bibliothèque standard riche</strong> : Python inclut des modules pour tout, de la manipulation de fichiers à la gestion de réseaux, en passant par les services web et les interfaces utilisateur graphiques.</p></li>
+</ul>
+</section>
+<section id="applications-de-python">
+<h2>Applications de Python<a class="headerlink" href="#applications-de-python" title="Lien vers cette rubrique">#</a></h2>
+<p>Python est un langage de programmation qui peut s’utiliser dans de nombreux contextes et s’adapter à tout type d’utilisation grâce à des bibliothèques spécialisées. Connu pour sa simplicité et sa lisibilité, il a rapidement gagné en popularité. Il a été conçu pour être un langage de programmation à usage général, avec une philosophie axée sur la lisibilité du code. Il est devenu populaire dans de nombreux domaines et pour de nombreuses applications, notamment :</p>
+<ul class="simple">
+<li><p><strong>Automatisation</strong> : Utilisé comme langage de script pour automatiser des tâches simples mais fastidieuses, comme récupérer la météo sur Internet ou s’intégrer dans un logiciel de conception assistée par ordinateur pour automatiser certains enchaînements d’actions répétitives.</p></li>
+<li><p><strong>Développement de prototype</strong> : Utilisé lorsque l’on a besoin d’une application fonctionnelle avant de l’optimiser avec un langage de plus bas niveau.</p></li>
+<li><p><strong>Développement Web</strong> : Création de sites web et d’applications web dynamiques avec des frameworks comme Django et Flask.</p></li>
+<li><p><strong>Analyse de données</strong> : Utilisation de bibliothèques comme Pandas, NumPy, et SciPy pour analyser et visualiser des données.</p></li>
+<li><p><strong>Machine Learning et Big Data</strong> : Mise en œuvre de modèles de machine learning avec Scikit-learn, TensorFlow et Keras. Python est également largement utilisé dans le domaine de l’informatique quantique et de l’intelligence artificielle.</p></li>
+<li><p><strong>Développement de jeux</strong> : Création de jeux vidéo avec Pygame.</p></li>
+</ul>
+<p>Python est particulièrement répandu dans le monde scientifique et possède de nombreuses bibliothèques optimisées destinées au calcul numérique.</p>
+</section>
+<section id="comment-installer-python">
+<h2>Comment installer Python ?<a class="headerlink" href="#comment-installer-python" title="Lien vers cette rubrique">#</a></h2>
+<p><strong>Téléchargement de Python</strong></p>
+<p>Pour télécharger Python, suivez ces étapes :</p>
+<ul class="simple">
+<li><p>Visitez le site officiel de Python : [python.org](<a class="reference external" href="https://www.python.org">https://www.python.org</a>).</p></li>
+<li><p>Choisissez votre système d’exploitation (Windows, macOS ou Linux).</p></li>
+<li><p>Téléchargez l’installateur correspondant.</p></li>
+<li><p>Ouvrez l’installateur téléchargé et suivez les instructions à l’écran :
+- Assurez-vous de cocher l’option <em>Add Python to PATH</em> lors de l’installation.
+- Cliquez sur <em>Install Now</em> et suivez les instructions.</p></li>
+</ul>
+<p><strong>Vérification de l’installation</strong></p>
+<p>Pour vérifier que Python est correctement installé :</p>
+<ul>
+<li><p>Ouvrez la ligne de commande (Terminal sur macOS/Linux, Command Prompt sur Windows).</p></li>
+<li><p>Tapez la commande suivante :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>--version
+</pre></div>
+</div>
+</li>
+<li><p>Si cela ne fonctionne pas, essayez :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>--version
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>Ajouter Python au PATH</strong></p>
+<p>Si Python n’est pas reconnu, vous devrez l’ajouter manuellement au PATH :</p>
+<ol class="arabic simple">
+<li><p>Sur Windows</p></li>
+</ol>
+<ul class="simple">
+<li><p>Appuyez sur <cite>Win + R</cite>, tapez <cite>sysdm.cpl</cite>, et appuyez sur <cite>Entrée</cite>.</p></li>
+<li><p>Dans l’onglet <em>Avancé</em>, cliquez sur <em>Variables d’environnement</em>.</p></li>
+<li><p>Dans la section <em>Variables système</em>, trouvez et sélectionnez la variable <em>Path</em>, puis cliquez sur <em>Modifier</em>.</p></li>
+<li><p>Cliquez sur <em>Nouveau</em> et ajoutez le chemin d’installation de Python (par exemple, <cite>C:\Users\VotreNom\AppData\Local\Programs\Python\Python39\</cite>).</p></li>
+<li><p>Cliquez sur <em>OK</em> pour fermer toutes les fenêtres.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Sur macOS/Linux</p></li>
+</ol>
+<ul>
+<li><p>Ouvrez le fichier de configuration de votre shell (par exemple, <cite>.bashrc</cite>, <cite>.zshrc</cite>).</p></li>
+<li><p>Ajoutez la ligne suivante :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/usr/local/bin/python3:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Sauvegardez le fichier et rechargez la configuration du shell :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/.bashrc<span class="w">  </span><span class="c1"># ou source ~/.zshrc</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="comment-choisir-et-installer-un-ide">
+<h2>Comment choisir et installer un IDE ?<a class="headerlink" href="#comment-choisir-et-installer-un-ide" title="Lien vers cette rubrique">#</a></h2>
+<p><strong>Qu’est-ce qu’un IDE ?</strong></p>
+<p>Un IDE (Environnement de Développement Intégré) est un logiciel qui fournit des outils complets pour le développement de logiciels, incluant un éditeur de code, un débogueur et des outils de gestion de projets.</p>
+<p>Les IDE les plus utilisés pour Python sont:</p>
+<ul class="simple">
+<li><p><strong>Visual Studio Code (VS Code)</strong> : Léger, extensible et très populaire, avec de nombreuses extensions pour Python.</p></li>
+<li><p><strong>PyCharm</strong> : Un IDE puissant spécialement conçu pour Python, offrant de nombreuses fonctionnalités avancées.</p></li>
+<li><p><strong>Jupyter Notebook</strong> : Idéal pour les projets de data science et les tutoriels interactifs.</p></li>
+<li><p><strong>IDLE</strong> : Environnement de développement intégré fourni avec Python, simple et facile à utiliser.</p></li>
+</ul>
+<p><strong>Installation de Visual Studio Code (VS Code)</strong></p>
+<p>Pour installer Visual Studio Code :</p>
+<ul class="simple">
+<li><p>Rendez-vous sur le site [code.visualstudio.com](<a class="reference external" href="https://code.visualstudio.com">https://code.visualstudio.com</a>).</p></li>
+<li><p>Téléchargez l’installateur pour votre système d’exploitation.</p></li>
+<li><p>Suivez les étapes d’installation.</p></li>
+<li><p>Ouvrez VS Code et installez l’extension Python depuis le Marketplace.</p></li>
+</ul>
+<p><strong>Installation de PyCharm</strong></p>
+<p>Pour installer PyCharm :</p>
+<ul class="simple">
+<li><p>Rendez-vous sur le site [jetbrains.com/pycharm](<a class="reference external" href="https://www.jetbrains.com/pycharm">https://www.jetbrains.com/pycharm</a>).</p></li>
+<li><p>Téléchargez l’installateur pour votre système d’exploitation.</p></li>
+<li><p>Suivez les étapes d’installation.</p></li>
+<li><p>Ouvrez PyCharm et configurez votre interpréteur Python.</p></li>
+</ul>
+<p><strong>Installation de Jupyter Notebook</strong></p>
+<p>Pour installer Jupyter Notebook :</p>
+<ul>
+<li><p>Installez Jupyter Notebook via Anaconda ou pip.</p></li>
+<li><p>Ouvrez la ligne de commande et tapez :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>notebook
+</pre></div>
+</div>
+<p>ou téléchargez Anaconda depuis [anaconda.com](<a class="reference external" href="https://www.anaconda.com">https://www.anaconda.com</a>).</p>
+</li>
+<li><p>Lancez Jupyter Notebook en tapant :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>notebook
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>Utilisation d’IDLE</strong></p>
+<p>IDLE (Integrated Development and Learning Environment) est l’IDE par défaut qui est fourni avec Python. Il est simple à utiliser et idéal pour les débutants.</p>
+<ol class="arabic simple">
+<li><p>Lancer IDLE</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Sur Windows</strong> : - Après avoir installé Python, recherchez « IDLE » dans la barre de recherche et cliquez sur l’application pour la lancer.</p></li>
+<li><p><strong>Sur macOS</strong> : - Ouvrez le dossier « Applications », puis le dossier « Python » et double-cliquez sur « IDLE ».</p></li>
+<li><p><strong>Sur Linux</strong> : - Ouvrez le terminal et tapez <cite>idle</cite> ou <cite>idle3</cite> selon la version installée.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Utilisation de l’éditeur IDLE</p></li>
+</ol>
+<ul class="simple">
+<li><p><strong>Éditeur de code</strong> : IDLE fournit un éditeur de code avec la coloration syntaxique.</p></li>
+<li><p><strong>Shell interactif</strong> : Vous pouvez exécuter des commandes Python directement dans le shell interactif.</p></li>
+<li><p><strong>Débogueur</strong> : IDLE comprend un débogueur intégré pour aider à identifier et corriger les erreurs dans votre code.</p></li>
+</ul>
+</section>
+<section id="qu-est-ce-qu-un-interpreteur">
+<h2>Qu’est ce qu’un interpréteur ?<a class="headerlink" href="#qu-est-ce-qu-un-interpreteur" title="Lien vers cette rubrique">#</a></h2>
+<p><strong>Lancer l’interpréteur</strong></p>
+<ol class="arabic simple">
+<li><p>Sur Unix/Linux/MacOS</p></li>
+</ol>
+<ul>
+<li><p>Installation par défaut :
+- L’interpréteur Python est généralement installé dans le répertoire <cite>/usr/local/bin/</cite>.
+- Pour vérifier si Python est installé, ouvrez votre terminal et tapez :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>--version
+</pre></div>
+</div>
+</li>
+<li><p>Lancer l’interpréteur :
+- Pour lancer l’interpréteur Python, tapez simplement :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Vous verrez le prompt interactif de Python, qui ressemble à ceci :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Python</span> <span class="mf">3.13</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Apr</span> <span class="mi">4</span> <span class="mi">2023</span><span class="p">,</span> <span class="mi">09</span><span class="p">:</span><span class="mi">25</span><span class="p">:</span><span class="mi">04</span><span class="p">)</span>
+<span class="p">[</span><span class="n">GCC</span> <span class="mf">10.2.0</span><span class="p">]</span> <span class="n">on</span> <span class="n">linux</span>
+<span class="n">Type</span> <span class="s2">&quot;help&quot;</span><span class="p">,</span> <span class="s2">&quot;copyright&quot;</span><span class="p">,</span> <span class="s2">&quot;credits&quot;</span> <span class="ow">or</span> <span class="s2">&quot;license&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Sur Windows</p></li>
+</ol>
+<ul>
+<li><p>Installation par défaut :
+- Si vous avez installé Python depuis le Microsoft Store, la commande <cite>python3</cite> sera disponible.
+- Vous pouvez également utiliser le lanceur <cite>py.exe</cite> si vous l’avez installé.</p></li>
+<li><p>Lancer l’interpréteur :
+- Ouvrez l’invite de commandes (Command Prompt) en appuyant sur <cite>Win + R</cite>, tapez <cite>cmd</cite>, et appuyez sur <cite>Entrée</cite>.
+- Tapez la commande suivante pour vérifier si Python est installé :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>--version
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Pour lancer l’interpréteur Python, tapez simplement :</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Vous verrez alors le prompt interactif de Python :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Python</span> <span class="mf">3.13</span> <span class="p">(</span><span class="n">default</span><span class="p">,</span> <span class="n">Apr</span> <span class="mi">4</span> <span class="mi">2023</span><span class="p">,</span> <span class="mi">09</span><span class="p">:</span><span class="mi">25</span><span class="p">:</span><span class="mi">04</span><span class="p">)</span>
+<span class="p">[</span><span class="n">GCC</span> <span class="mf">10.2.0</span><span class="p">]</span> <span class="n">on</span> <span class="n">win32</span>
+<span class="n">Type</span> <span class="s2">&quot;help&quot;</span><span class="p">,</span> <span class="s2">&quot;copyright&quot;</span><span class="p">,</span> <span class="s2">&quot;credits&quot;</span> <span class="ow">or</span> <span class="s2">&quot;license&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>Quitter l’interpréteur</strong></p>
+<ul>
+<li><p>Sur Unix/Linux/MacOS :
+- Tapez <cite>Control-D</cite> pour quitter l’interpréteur.</p></li>
+<li><p>Sur Windows :
+- Tapez <cite>Control-Z</cite> suivi de <cite>Entrée</cite> pour signaler la fin de l’entrée.
+- Vous pouvez également quitter l’interpréteur en tapant l’une des commandes suivantes :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">quit</span><span class="p">()</span>
+<span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title">Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="syntaxe.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title">Syntaxe et concepts de base</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, {John GABARY}.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
