@@ -1,0 +1,784 @@
+
+<!DOCTYPE html>
+
+
+<html lang="fr" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4. Entrées et Sorties &#8212; Documentation ActuBasics </title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=72dce1d2"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/translations.js?v=e6b791cb"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'python/concept/entrees_sorties';</script>
+    <link rel="icon" href="../../_static/log.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Recherche" href="../../search.html" />
+    <link rel="next" title="5. Modules et importations" href="modules.html" />
+    <link rel="prev" title="3. Fonctions" href="fonctions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="08 novembre 2024"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Bienvenue sur ma page destinée à l'apprentissage de logiciels pour L'Actuaire|Data Scientist</div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/log.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/log2.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Actu-Basics</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Introduction.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Python
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Recherche</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/PyData" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/JohnGAB7" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.facebook.com/NivekJGL/" title="Facebook" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-facebook fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Facebook</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.instagram.com/nivekjgl/" title="Instagram" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-instagram fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Instagram</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/@Actu-Basics" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Recherche</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Introduction.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Python
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/PyData" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/JohnGAB7" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.facebook.com/NivekJGL/" title="Facebook" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-facebook fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Facebook</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.instagram.com/nivekjgl/" title="Instagram" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-instagram fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Instagram</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/@Actu-Basics" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Qu’est-ce que Python ?</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../syntaxe/index.html">Syntaxe du langage Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../syntaxe/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntaxe/indentation.html">1. Indentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntaxe/declaration.html">2. Déclaration de Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntaxe/mots_cles.html">4. Mots-clés du langage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntaxe/types_donnees.html">5. Les Types de données en Python</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Concept de base du langage</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="operateurs.html">1. Opérateurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure_de_controle.html">2. Structures de contrôle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fonctions.html">3. Fonctions</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">4. Entrées et Sorties</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="modules.html">5. Modules et importations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comprehension.html">6. Compréhensions</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Python</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Concept de base du langage</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">4. Entrées et Sorties</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="entrees-et-sorties">
+<h1>4. Entrées et Sorties<a class="headerlink" href="#entrees-et-sorties" title="Lien vers cette rubrique">#</a></h1>
+<p>Les opérations d’entrée et de sortie (I/O) sont essentielles pour interagir avec les utilisateurs et afficher des informations. Python fournit des fonctions intégrées pour lire les entrées de l’utilisateur et afficher des sorties sur la console.</p>
+<section id="fonction-input">
+<h2>Fonction input()<a class="headerlink" href="#fonction-input" title="Lien vers cette rubrique">#</a></h2>
+<p>La fonction <cite>input()</cite> est utilisée pour lire une entrée de l’utilisateur sous forme de chaîne de caractères. Elle peut également afficher un message d’invite.</p>
+<p><strong>Syntaxe générale :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">variable</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Message d&#39;invite : &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Exemple d’utilisation :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nom</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entrez votre nom : &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Bonjour, </span><span class="si">{</span><span class="n">nom</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dans cet exemple, la fonction <cite>input()</cite> affiche le message « Entrez votre nom : » et attend que l’utilisateur saisisse une entrée. La chaîne saisie par l’utilisateur est stockée dans la variable <cite>nom</cite>.</p>
+<p>### Conversion des entrées</p>
+<p>Les entrées lues par <cite>input()</cite> sont toujours de type chaîne de caractères. Si vous avez besoin d’une autre type de donnée, comme un entier ou un flottant, vous devez convertir l’entrée.</p>
+<p><strong>Exemple de conversion :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entrez votre âge : &quot;</span><span class="p">)</span>
+<span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>  <span class="c1"># Conversion de la chaîne en entier</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Vous avez </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> ans.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="affichage-avec-print">
+<h2>Affichage avec print()<a class="headerlink" href="#affichage-avec-print" title="Lien vers cette rubrique">#</a></h2>
+<p>La fonction <cite>print()</cite> est utilisée pour afficher des informations sur la console. Elle peut afficher des chaînes de caractères, des variables, des résultats d’expressions, etc.</p>
+<p><strong>Syntaxe générale :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">objet1</span><span class="p">,</span> <span class="n">objet2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><cite>objet1, objet2, …</cite> : Les objets à afficher.</p></li>
+<li><p><cite>sep</cite> : Le séparateur entre les objets (par défaut, un espace).</p></li>
+<li><p><cite>end</cite> : Ce qui est affiché à la fin (par défaut, un saut de ligne).</p></li>
+</ul>
+<p><strong>Exemple d’utilisation :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nom :&quot;</span><span class="p">,</span> <span class="n">nom</span><span class="p">,</span> <span class="s2">&quot;Âge :&quot;</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dans cet exemple, <cite>print()</cite> affiche les valeurs des variables <cite>nom</cite> et <cite>age</cite>, séparées par des espaces.</p>
+<p>### Séparateur et fin de ligne</p>
+<p>Vous pouvez personnaliser le séparateur et la fin de ligne avec les paramètres <cite>sep</cite> et <cite>end</cite>.</p>
+<p><strong>Exemple de séparateur :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">)</span>  <span class="c1"># Sortie : A-B-C</span>
+</pre></div>
+</div>
+<p><strong>Exemple de fin de ligne :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bonjour&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Comment ça va?&quot;</span><span class="p">)</span>  <span class="c1"># Sortie : Bonjour!Comment ça va?</span>
+</pre></div>
+</div>
+</section>
+<section id="formatage-des-chaines-de-caracteres">
+<h2>Formatage des chaînes de caractères<a class="headerlink" href="#formatage-des-chaines-de-caracteres" title="Lien vers cette rubrique">#</a></h2>
+<p>Le formatage des chaînes de caractères permet d’insérer des valeurs dans des chaînes de manière élégante et lisible. Python propose plusieurs méthodes pour formater des chaînes, notamment l’opérateur <cite>%</cite>, la méthode <cite>str.format()</cite>, et les f-strings (format strings).</p>
+<p>### Opérateur <cite>%</cite></p>
+<p>L’opérateur <cite>%</cite> permet d’insérer des valeurs dans une chaîne en utilisant des spécificateurs de format.</p>
+<p><strong>Syntaxe générale :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;chaîne </span><span class="si">% s</span><span class="s2">pécificateur&quot;</span> <span class="o">%</span> <span class="n">valeur</span>
+</pre></div>
+</div>
+<p><strong>Exemple d’utilisation :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nom : </span><span class="si">%s</span><span class="s2">, Âge : </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">nom</span><span class="p">,</span> <span class="n">age</span><span class="p">))</span>  <span class="c1"># Sortie : Nom : Alice, Âge : 30</span>
+</pre></div>
+</div>
+<p>### Méthode <cite>str.format()</cite></p>
+<p>La méthode <cite>str.format()</cite> offre une manière plus flexible de formater des chaînes.</p>
+<p><strong>Syntaxe générale :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;chaîne </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">valeur</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Exemple d’utilisation :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nom : </span><span class="si">{}</span><span class="s2">, Âge : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nom</span><span class="p">,</span> <span class="n">age</span><span class="p">))</span>  <span class="c1"># Sortie : Nom : Alice, Âge : 30</span>
+</pre></div>
+</div>
+<p>### f-strings (format strings)</p>
+<p>Les f-strings, introduites dans Python 3.6, permettent d’insérer des expressions directement dans des chaînes en les préfixant par <cite>f</cite> ou <cite>F</cite>.</p>
+<p><strong>Syntaxe générale :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s2">&quot;chaîne </span><span class="si">{</span><span class="n">expression</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p><strong>Exemple d’utilisation :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Nom : </span><span class="si">{</span><span class="n">nom</span><span class="si">}</span><span class="s2">, Âge : </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Sortie : Nom : Alice, Âge : 30</span>
+</pre></div>
+</div>
+<p>Les f-strings sont souvent préférées pour leur simplicité et leur lisibilité, en particulier lorsqu’il s’agit de formatage de chaînes complexes.</p>
+<p>En utilisant ces méthodes, vous pouvez gérer efficacement les entrées et sorties en Python, ainsi que formater les chaînes de caractères pour afficher des informations de manière claire et structurée.</p>
+</section>
+</section>
+<section id="gestion-des-erreurs-et-exceptions">
+<h1>Gestion des erreurs et exceptions<a class="headerlink" href="#gestion-des-erreurs-et-exceptions" title="Lien vers cette rubrique">#</a></h1>
+<p>La gestion des erreurs et des exceptions est cruciale pour écrire des programmes robustes et fiables. Les exceptions permettent de gérer les situations où une erreur se produit pendant l’exécution du programme, ce qui empêche le programme de planter et offre une manière de traiter l’erreur de manière appropriée.</p>
+<section id="instructions-try-except-else-finally">
+<h2>Instructions try, except, else, finally<a class="headerlink" href="#instructions-try-except-else-finally" title="Lien vers cette rubrique">#</a></h2>
+<p>Python utilise les blocs <cite>try</cite>, <cite>except</cite>, <cite>else</cite> et <cite>finally</cite> pour gérer les exceptions. Voici un aperçu de chaque bloc :</p>
+<ul class="simple">
+<li><p><strong>try</strong> : Ce bloc contient le code qui pourrait provoquer une exception.</p></li>
+<li><p><strong>except</strong> : Ce bloc contient le code qui est exécuté si une exception se produit dans le bloc <cite>try</cite>.</p></li>
+<li><p><strong>else</strong> : Ce bloc contient le code qui est exécuté si aucune exception ne se produit dans le bloc <cite>try</cite>.</p></li>
+<li><p><strong>finally</strong> : Ce bloc contient le code qui est exécuté en dernier, que l’exception se produise ou non.</p></li>
+</ul>
+<p><strong>Syntaxe générale :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Bloc de code susceptible de provoquer une exception</span>
+    <span class="k">pass</span>
+<span class="k">except</span> <span class="n">Erreur</span><span class="p">:</span>
+    <span class="c1"># Bloc de code exécuté en cas d&#39;exception</span>
+    <span class="k">pass</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="c1"># Bloc de code exécuté si aucune exception ne se produit</span>
+    <span class="k">pass</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="c1"># Bloc de code exécuté en dernier</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p><strong>Exemple d’utilisation :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entrez un nombre : &quot;</span><span class="p">))</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="n">x</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erreur : Vous devez entrer un nombre entier.&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erreur : Division par zéro.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Le résultat est </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fin de l&#39;exécution&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dans cet exemple, le bloc <cite>try</cite> tente de lire un nombre de l’utilisateur et de diviser 10 par ce nombre. Si l’utilisateur entre une valeur qui n’est pas un entier, une exception <cite>ValueError</cite> est levée et gérée par le bloc <cite>except</cite>. Si l’utilisateur entre zéro, une exception <cite>ZeroDivisionError</cite> est levée et gérée. Le bloc <cite>else</cite> est exécuté uniquement si aucune exception ne se produit, et le bloc <cite>finally</cite> est toujours exécuté à la fin.</p>
+</section>
+<section id="levee-d-exceptions-raise">
+<h2>Levée d’exceptions (raise)<a class="headerlink" href="#levee-d-exceptions-raise" title="Lien vers cette rubrique">#</a></h2>
+<p>Il est parfois nécessaire de lever des exceptions manuellement pour indiquer qu’une situation anormale s’est produite. L’instruction <cite>raise</cite> permet de lever une exception.</p>
+<p><strong>Syntaxe générale :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">raise</span> <span class="n">NomDeLException</span><span class="p">(</span><span class="s2">&quot;message&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Exemple d’utilisation :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">verifier_age</span><span class="p">(</span><span class="n">age</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;L&#39;âge ne peut pas être négatif&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">age</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">age_utilisateur</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entrez votre âge : &quot;</span><span class="p">))</span>
+    <span class="n">age_verifie</span> <span class="o">=</span> <span class="n">verifier_age</span><span class="p">(</span><span class="n">age_utilisateur</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Votre âge est </span><span class="si">{</span><span class="n">age_verifie</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erreur : </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dans cet exemple, la fonction <cite>verifier_age</cite> lève une exception <cite>ValueError</cite> si l’âge fourni est négatif. Le bloc <cite>try</cite> tente de lire l’âge de l’utilisateur et de vérifier qu’il est valide. Si une exception est levée, elle est gérée par le bloc <cite>except</cite>.</p>
+</section>
+<section id="bonnes-pratiques-pour-la-gestion-des-exceptions">
+<h2>Bonnes pratiques pour la gestion des exceptions<a class="headerlink" href="#bonnes-pratiques-pour-la-gestion-des-exceptions" title="Lien vers cette rubrique">#</a></h2>
+<p>Pour écrire un code robuste et facile à maintenir, il est important de suivre certaines bonnes pratiques lors de la gestion des exceptions :</p>
+<ul>
+<li><p><strong>Spécificité des exceptions</strong> : Gérez les exceptions spécifiques plutôt que d’utiliser une clause <cite>except</cite> générale. Cela permet de traiter les erreurs de manière plus appropriée et de ne pas masquer d’autres exceptions inattendues.</p>
+<p><strong>Exemple :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entrez un nombre : &quot;</span><span class="p">))</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erreur : Vous devez entrer un nombre entier.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Éviter de masquer les erreurs</strong> : Ne laissez pas le bloc <cite>except</cite> vide ou avec un <cite>pass</cite>. Cela pourrait masquer des erreurs qui devraient être corrigées.</p>
+<p><strong>Exemple à éviter :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Entrez un nombre : &quot;</span><span class="p">))</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">pass</span>  <span class="c1"># Mauvaise pratique</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Utiliser le bloc `finally` pour le nettoyage</strong> : Utilisez le bloc <cite>finally</cite> pour exécuter des actions de nettoyage, telles que la fermeture de fichiers ou la libération de ressources, même si une exception se produit.</p>
+<p><strong>Exemple :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">fichier</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;fichier.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+    <span class="n">contenu</span> <span class="o">=</span> <span class="n">fichier</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erreur : Le fichier n&#39;existe pas.&quot;</span><span class="p">)</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">fichier</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Lever des exceptions appropriées</strong> : Lorsque vous levez des exceptions, assurez-vous qu’elles sont appropriées pour la situation et fournissez des messages d’erreur clairs et informatifs.</p>
+<p><strong>Exemple :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">diviser</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ZeroDivisionError</span><span class="p">(</span><span class="s2">&quot;Division par zéro non autorisée&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>try:</dt><dd><p>resultat = diviser(10, 0)</p>
+</dd>
+<dt>except ZeroDivisionError as e:</dt><dd><p>print(f »Erreur : {e} »)</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p>En suivant ces bonnes pratiques, vous pouvez écrire un code plus résilient et plus facile à déboguer, en assurant une gestion appropriée des erreurs et des exceptions.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="fonctions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title">3. Fonctions</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="modules.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title">5. Modules et importations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, {John GABARY}.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

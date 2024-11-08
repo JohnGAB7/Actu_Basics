@@ -1,0 +1,719 @@
+
+<!DOCTYPE html>
+
+
+<html lang="fr" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3. Fonctions &#8212; Documentation ActuBasics </title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!-- 
+    this give us a css class that will be invisible only if js is disabled 
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+
+    <script src="../../_static/documentation_options.js?v=72dce1d2"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/translations.js?v=e6b791cb"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'python/concept/fonctions';</script>
+    <link rel="icon" href="../../_static/log.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Recherche" href="../../search.html" />
+    <link rel="next" title="4. Entrées et Sorties" href="entrees_sorties.html" />
+    <link rel="prev" title="2. Structures de contrôle" href="structure_de_controle.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="08 novembre 2024"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Bienvenue sur ma page destinée à l'apprentissage de logiciels pour L'Actuaire|Data Scientist</div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/log.png" class="logo__image only-light" alt=""/>
+    <img src="../../_static/log2.png" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">Actu-Basics</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Introduction.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Python
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Recherche</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/PyData" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/JohnGAB7" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.facebook.com/NivekJGL/" title="Facebook" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-facebook fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Facebook</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.instagram.com/nivekjgl/" title="Instagram" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-instagram fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Instagram</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/@Actu-Basics" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Recherche</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Introduction.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../index.html">
+    Python
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/PyData" title="Twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/JohnGAB7" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.facebook.com/NivekJGL/" title="Facebook" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-facebook fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Facebook</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.instagram.com/nivekjgl/" title="Instagram" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-instagram fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Instagram</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/@Actu-Basics" title="YouTube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">YouTube</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Qu’est-ce que Python ?</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../syntaxe/index.html">Syntaxe du langage Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../syntaxe/introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntaxe/indentation.html">1. Indentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntaxe/declaration.html">2. Déclaration de Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntaxe/mots_cles.html">4. Mots-clés du langage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../syntaxe/types_donnees.html">5. Les Types de données en Python</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Concept de base du langage</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="operateurs.html">1. Opérateurs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structure_de_controle.html">2. Structures de contrôle</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3. Fonctions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entrees_sorties.html">4. Entrées et Sorties</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="modules.html">5. Modules et importations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="comprehension.html">6. Compréhensions</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Python</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Concept de base du langage</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">3. Fonctions</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="fonctions">
+<h1>3. Fonctions<a class="headerlink" href="#fonctions" title="Lien vers cette rubrique">#</a></h1>
+<p>Les fonctions en Python sont des blocs de code réutilisables qui effectuent une tâche spécifique. Elles permettent de structurer le code de manière modulaire, ce qui facilite la lecture, la maintenance et le réutilisation du code.</p>
+<section id="definition-et-appel-de-fonctions">
+<h2>Définition et appel de fonctions<a class="headerlink" href="#definition-et-appel-de-fonctions" title="Lien vers cette rubrique">#</a></h2>
+<p>Une fonction est définie à l’aide du mot-clé <cite>def</cite>, suivi du nom de la fonction, des parenthèses et d’un deux-points. Le corps de la fonction est indente.</p>
+<p><strong>Syntaxe générale :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nom_de_la_fonction</span><span class="p">(</span><span class="n">parametres</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description de la fonction.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Corps de la fonction</span>
+    <span class="n">instructions</span>
+</pre></div>
+</div>
+<p><strong>Exemple d’utilisation :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saluer</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Cette fonction affiche un message de salutation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bonjour!&quot;</span><span class="p">)</span>
+
+<span class="c1"># Appel de la fonction</span>
+<span class="n">saluer</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Dans cet exemple, la fonction <cite>saluer</cite> est définie sans paramètres et affiche simplement « Bonjour! » lorsqu’elle est appelée.</p>
+</section>
+<section id="parametres-et-arguments">
+<h2>Paramètres et arguments<a class="headerlink" href="#parametres-et-arguments" title="Lien vers cette rubrique">#</a></h2>
+<p>Les fonctions peuvent accepter des paramètres, qui sont des variables locales définies dans la déclaration de la fonction. Lors de l’appel de la fonction, les valeurs spécifiques fournies pour ces paramètres sont appelées arguments.</p>
+<p><strong>Syntaxe générale :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nom_de_la_fonction</span><span class="p">(</span><span class="n">parametre1</span><span class="p">,</span> <span class="n">parametre2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description de la fonction.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Corps de la fonction utilisant les paramètres</span>
+    <span class="n">instructions</span>
+</pre></div>
+</div>
+<p><strong>Exemple d’utilisation :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saluer_personne</span><span class="p">(</span><span class="n">nom</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Cette fonction affiche un message de salutation personnalisé.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Bonjour, </span><span class="si">{</span><span class="n">nom</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+
+<span class="c1"># Appel de la fonction avec un argument</span>
+<span class="n">saluer_personne</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Dans cet exemple, la fonction <cite>saluer_personne</cite> prend un paramètre <cite>nom</cite> et affiche un message de salutation personnalisé.</p>
+<p>### Paramètres par défaut</p>
+<p>Les fonctions peuvent également avoir des paramètres avec des valeurs par défaut. Cela permet d’appeler la fonction sans fournir explicitement des arguments pour ces paramètres.</p>
+<p><strong>Exemple d’utilisation :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saluer_personne</span><span class="p">(</span><span class="n">nom</span><span class="o">=</span><span class="s2">&quot;inconnu&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Cette fonction affiche un message de salutation personnalisé avec un nom par défaut.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Bonjour, </span><span class="si">{</span><span class="n">nom</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+
+<span class="c1"># Appel de la fonction sans argument</span>
+<span class="n">saluer_personne</span><span class="p">()</span>
+
+<span class="c1"># Appel de la fonction avec un argument</span>
+<span class="n">saluer_personne</span><span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="valeurs-de-retour">
+<h2>Valeurs de retour<a class="headerlink" href="#valeurs-de-retour" title="Lien vers cette rubrique">#</a></h2>
+<p>Les fonctions peuvent renvoyer des valeurs à l’aide de l’instruction <cite>return</cite>. Cela permet à la fonction de produire une sortie qui peut être utilisée dans d’autres parties du programme.</p>
+<p><strong>Syntaxe générale :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nom_de_la_fonction</span><span class="p">(</span><span class="n">parametres</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Description de la fonction.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Corps de la fonction</span>
+    <span class="n">resultat</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="k">return</span> <span class="n">resultat</span>
+</pre></div>
+</div>
+<p><strong>Exemple d’utilisation :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">addition</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Cette fonction renvoie la somme de deux nombres.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="c1"># Appel de la fonction et utilisation de la valeur de retour</span>
+<span class="n">resultat</span> <span class="o">=</span> <span class="n">addition</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">resultat</span><span class="p">)</span>  <span class="c1"># Sortie : 7</span>
+</pre></div>
+</div>
+</section>
+<section id="fonctions-lambda-fonctions-anonymes">
+<h2>Fonctions lambda (fonctions anonymes)<a class="headerlink" href="#fonctions-lambda-fonctions-anonymes" title="Lien vers cette rubrique">#</a></h2>
+<p>Les fonctions lambda sont des fonctions anonymes définies à l’aide du mot-clé <cite>lambda</cite>. Elles peuvent prendre plusieurs arguments, mais ne peuvent contenir qu’une seule expression.</p>
+<p><strong>Syntaxe générale :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">parametres</span><span class="p">:</span> <span class="n">expression</span>
+</pre></div>
+</div>
+<p><strong>Exemple d’utilisation :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fonction lambda pour additionner deux nombres</span>
+<span class="n">addition</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+
+<span class="c1"># Utilisation de la fonction lambda</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">addition</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>  <span class="c1"># Sortie : 7</span>
+</pre></div>
+</div>
+<p>Les fonctions lambda sont souvent utilisées pour des opérations simples et rapides, généralement en combinaison avec des fonctions de haut niveau comme <cite>map</cite>, <cite>filter</cite>, et <cite>reduce</cite>.</p>
+</section>
+<section id="portee-des-variables-global-local">
+<h2>Portée des variables (global, local)<a class="headerlink" href="#portee-des-variables-global-local" title="Lien vers cette rubrique">#</a></h2>
+<p>La portée d’une variable définit l’endroit où la variable peut être utilisée dans le programme. Python distingue les variables locales et globales.</p>
+<p>### Variables locales</p>
+<p>Les variables locales sont définies à l’intérieur d’une fonction et ne sont accessibles que dans cette fonction.</p>
+<p><strong>Exemple d’utilisation :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ma_fonction</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Variable locale</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">ma_fonction</span><span class="p">()</span>
+<span class="c1"># print(x) provoquerait une erreur, car x n&#39;est pas défini en dehors de la fonction</span>
+</pre></div>
+</div>
+<p>### Variables globales</p>
+<p>Les variables globales sont définies en dehors de toutes les fonctions et sont accessibles depuis n’importe quelle fonction du programme.</p>
+<p><strong>Exemple d’utilisation :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Variable globale</span>
+
+<span class="k">def</span> <span class="nf">ma_fonction</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">ma_fonction</span><span class="p">()</span>  <span class="c1"># Sortie : 10</span>
+</pre></div>
+</div>
+<p>### Utilisation du mot-clé <cite>global</cite></p>
+<p>Le mot-clé <cite>global</cite> permet de modifier une variable globale à l’intérieur d’une fonction.</p>
+<p><strong>Exemple d’utilisation :</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># Variable globale</span>
+
+<span class="k">def</span> <span class="nf">changer_x</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">x</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="n">changer_x</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># Sortie : 20</span>
+</pre></div>
+</div>
+<p>En utilisant ces concepts, vous pouvez définir, appeler et manipuler des fonctions en Python de manière efficace et structurée.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="structure_de_controle.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title">2. Structures de contrôle</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="entrees_sorties.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title">4. Entrées et Sorties</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, {John GABARY}.
+      <br/>
+    
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__center">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

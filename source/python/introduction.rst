@@ -14,6 +14,10 @@ Caractéristiques et avantages de Python
 
 - **Langage interprété** : L'absence de compilation préalable accélère le cycle de développement, permettant des tests et des itérations rapides. Cela rend Python particulièrement adapté au prototypage rapide et aux projets de grande envergure.
 
+- **Interactif** : Python dispose d'un interpréteur interactif qui permet aux développeurs d'exécuter du code en temps réel, d'expérimenter et de tester des idées rapidement. 
+
+- **Orienté objet** : Python supporte la programmation orientée objet, permettant aux développeurs de créer des programmes modulaires et réutilisables.
+
 - **Extensibilité et Intégration** : Python permet l'intégration de modules écrits en C/C++ pour optimiser les performances lors d'opérations critiques. De plus, il peut interagir avec d'autres langages et technologies, facilitant ainsi l'intégration dans des environnements de développement complexes.
 
 - **Communauté et Support** : Python bénéficie d'une vaste communauté d'utilisateurs et de développeurs. Cette communauté active contribue à une riche documentation, de nombreux forums d'entraide, et une grande quantité de bibliothèques et de frameworks disponibles en open source.

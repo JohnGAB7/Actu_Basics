@@ -48,12 +48,12 @@
     <link rel="icon" href="../_static/log.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="Structures de Données en Python" href="structures_de_donnees.html" />
+    <link rel="next" title="Opérateurs en Python" href="operateurs.html" />
     <link rel="prev" title="Qu’est-ce que Python ?" href="introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="fr"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="04 novembre 2024"/>
+    <meta name="docbuild:last-update" content="06 novembre 2024"/>
   </head>
   
   
@@ -370,7 +370,13 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Qu’est-ce que Python ?</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Syntaxe et concepts de base</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operateurs.html">Opérateurs en Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="structures_de_donnees.html">Structures de Données en Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prog_fonctionnelle.html">Programmation fonctionnelle</a></li>
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="bibliotheques_fondamentales.html">Bibliothèques Python</a></li>
 </ul>
 </div>
@@ -429,12 +435,75 @@
                   
   <section id="syntaxe-et-concepts-de-base">
 <h1>Syntaxe et concepts de base<a class="headerlink" href="#syntaxe-et-concepts-de-base" title="Lien vers cette rubrique">#</a></h1>
-<p>Python est un langage de programmation à syntaxe simple et lisible, conçu pour la facilité d’utilisation. Ses caractéristiques incluent l’indentation obligatoire, un ensemble de mots-clés réservés, et des types de données intégrés. Python prend également en charge la programmation fonctionnelle, la programmation orientée objet, et permet d’utiliser des générateurs pour une gestion efficace de la mémoire.</p>
 <section id="syntaxe">
 <h2>Syntaxe<a class="headerlink" href="#syntaxe" title="Lien vers cette rubrique">#</a></h2>
-<p>Python privilégie la lisibilité grâce à une syntaxe claire qui impose l’indentation pour délimiter les blocs de code, ce qui favorise l’écriture de code structuré et propre.</p>
+<p>La syntaxe d’un langage de programmation définit les règles qui régissent la structure et l’ordonnancement des instructions. Une syntaxe claire et cohérente est essentielle pour plusieurs raisons :</p>
+<ul class="simple">
+<li><p><strong>Lisibilité</strong> : Un code lisible permet aux développeurs de comprendre facilement le fonctionnement d’un programme, de collaborer efficacement avec d’autres développeurs et de maintenir le code sur le long terme.</p></li>
+<li><p><strong>Débogage</strong> : Une syntaxe claire réduit les erreurs syntaxiques et facilite la détection et la correction des bugs. Les développeurs peuvent se concentrer sur la logique de leur programme plutôt que sur la résolution de problèmes syntaxiques.</p></li>
+<li><p><strong>Productivité</strong> : Une syntaxe simple et intuitive permet aux développeurs d’écrire du code plus rapidement et plus efficacement. Moins de temps passé à apprendre et à se souvenir de la syntaxe signifie plus de temps pour résoudre des problèmes complexes et développer des fonctionnalités.</p></li>
+<li><p><strong>Collaboration</strong> : Une syntaxe cohérente facilite la collaboration entre les développeurs, car chacun peut comprendre et modifier le code de l’autre sans avoir à se familiariser avec des règles syntaxiques complexes ou non intuitives.</p></li>
+</ul>
+<p>Une syntaxe bien conçue améliore la qualité du code, accélère le développement et favorise la collaboration entre les développeurs. Python privilégie la lisibilité grâce à une syntaxe claire qui impose l’indentation pour délimiter les blocs de code, ce qui favorise l’écriture de code structuré et propre.</p>
+<p>Comparé à d’autres langages de programmation, Python se distingue par sa syntaxe simple et intuitive. Voici quelques comparaisons avec d’autres langages couramment utilisés :</p>
+<ul class="simple">
+<li><p><strong>Python vs. C++</strong> : C++ est un langage puissant mais complexe, avec une syntaxe riche et souvent difficile à maîtriser. Python, en revanche, met l’accent sur la simplicité et la lisibilité, ce qui le rend plus accessible aux débutants.</p></li>
+<li><p><strong>Python vs. Java</strong> : Java est un langage orienté objet avec une syntaxe stricte et une gestion explicite des types. Python offre une syntaxe plus concise et dynamique, permettant aux développeurs d’écrire moins de code pour accomplir les mêmes tâches.</p></li>
+<li><p><strong>Python vs. JavaScript</strong> : JavaScript est principalement utilisé pour le développement web côté client, avec une syntaxe flexible mais parfois incohérente. Python, avec sa syntaxe cohérente et ses puissantes bibliothèques, est idéal pour un large éventail d’applications au-delà du web.</p></li>
+<li><p><strong>Python vs. Ruby</strong> : Ruby est un autre langage interprété avec une syntaxe élégante et orientée objet. Cependant, Python dispose d’une communauté plus vaste et d’une meilleure documentation, ce qui en fait un choix plus populaire pour de nombreux développeurs.</p></li>
+<li><p><strong>Python vs. R</strong> : R est un langage spécialisé pour l’analyse statistique et la visualisation de données, avec une syntaxe particulière à cet usage. Python, grâce à des bibliothèques comme Pandas et Matplotlib, offre des capacités similaires tout en restant un langage de programmation généraliste.</p></li>
+</ul>
+<p>En résumé, la syntaxe simple et claire de Python, combinée à sa polyvalence et à sa vaste communauté, en fait un langage de choix pour de nombreux développeurs, quel que soit leur niveau de compétence ou leur domaine d’application.</p>
 <p><strong>Indentation</strong></p>
-<p>Contrairement à de nombreux autres langages de programmation qui utilisent des accolades <cite>{}</cite> pour délimiter les blocs de code, Python utilise l’indentation. Chaque bloc de code est défini par son indentation, ce qui rend le code plus lisible et plus structuré. L’indentation est cruciale en Python, car elle détermine la hiérarchie des instructions.</p>
+<p>L’indentation est un aspect crucial de la syntaxe en Python. Contrairement à de nombreux autres langages de programmation qui utilisent des accolades <cite>{}</cite> pour délimiter les blocs de code, Python utilise l’indentation. Chaque bloc de code est défini par son indentation, ce qui rend le code plus lisible et plus structuré. L’indentation est cruciale en Python, car elle détermine la hiérarchie des instructions. Python utilise l’indentation pour définir la structure du code; une indentation correcte est essentielle pour le bon fonctionnement du programme, et des erreurs d’indentation peuvent entraîner des erreurs de syntaxe.</p>
+<p>L’indentation joue un rôle clé dans Python car elle définit les blocs de code qui appartiennent ensemble. Cela inclut les blocs de code pour les fonctions, les boucles, les conditions, et autres structures de contrôle.</p>
+<p><strong>Exemple :</strong>
+.. code-block:: python</p>
+<blockquote>
+<div><dl class="simple">
+<dt>if x &gt; 0:</dt><dd><p>print(« x est positif »)</p>
+</dd>
+<dt>else:</dt><dd><p>print(« x est négatif ou zéro »)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Dans cet exemple, l’indentation indique que la ligne <cite>print(« x est positif »)</cite> appartient au bloc de code de la condition <cite>if</cite>, et que <cite>print(« x est négatif ou zéro »)</cite> appartient au bloc de code de la condition <cite>else</cite>.</p>
+<p>Une indentation cohérente permet de s’assurer que le code est correctement structuré et facile à lire. En Python, il est courant d’utiliser quatre espaces pour chaque niveau d’indentation, bien que certains développeurs préfèrent utiliser des tabulations.</p>
+<p>Dans de nombreux autres langages de programmation, tels que C, C++, Java, et JavaScript, les blocs de code sont délimités par des accolades <cite>{}</cite>. L’indentation est utilisée pour améliorer la lisibilité, mais elle n’est pas nécessaire pour définir la structure du code.</p>
+<p><strong>Exemple en C++ :</strong></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;x est positif&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;x est négatif ou zéro&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>En C++, les accolades <cite>{}</cite> délimitent les blocs de code pour les conditions <cite>if</cite> et <cite>else</cite>. L’indentation aide à lire le code, mais le compilateur se fie aux accolades pour comprendre la structure.</p>
+<p>En revanche, en Python, l’indentation est obligatoire et fait partie intégrante de la syntaxe. L’absence d’accolades rend la lecture du code plus naturelle et moins encombrée, mais elle exige une rigueur stricte en matière d’indentation.</p>
+<p><strong>Bonnes pratiques pour l’indentation</strong></p>
+<p>Une bonne indentation est essentielle pour la lisibilité et la maintenabilité du code. Voici quelques bonnes pratiques pour l’indentation en Python :</p>
+<ul class="simple">
+<li><p><strong>Utiliser des espaces ou des tabulations, mais pas les deux</strong> : Mélanger des espaces et des tabulations peut entraîner des erreurs de syntaxe difficiles à détecter. Il est recommandé d’utiliser quatre espaces par niveau d’indentation.</p></li>
+<li><p><strong>Être cohérent</strong> : Utilisez la même méthode d’indentation tout au long de votre code. La cohérence améliore la lisibilité et réduit les erreurs potentielles.</p></li>
+<li><p><strong>Indentation des blocs de code</strong> : Indentez toutes les lignes de code qui appartiennent à un bloc, y compris les lignes de continuation.</p></li>
+<li><p><strong>Utiliser un éditeur de code avec support de l’indentation</strong> : Utilisez un éditeur de code qui gère automatiquement l’indentation. Cela peut réduire le risque d’erreurs et améliorer la productivité.</p></li>
+<li><p><strong>Vérifier l’indentation dans les fichiers existants</strong> : Lorsque vous modifiez du code existant, assurez-vous que votre indentation correspond à celle du fichier pour maintenir la cohérence.</p></li>
+</ul>
+<p><strong>Exemple :</strong>
+.. code-block:: python</p>
+<blockquote>
+<div><dl class="simple">
+<dt>def fonction_exemple(parametre):</dt><dd><dl class="simple">
+<dt>if parametre &gt; 0:</dt><dd><p>print(« Le paramètre est positif »)</p>
+</dd>
+<dt>else:</dt><dd><p>print(« Le paramètre est négatif ou zéro »)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>fonction_exemple(5)</p>
+</div></blockquote>
+<p>En suivant ces bonnes pratiques, vous pouvez vous assurer que votre code Python est propre, lisible et facile à maintenir.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x est positif&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
@@ -449,14 +518,63 @@
 </pre></div>
 </div>
 <p><strong>Commentaires</strong></p>
-<p>Les commentaires sont ajoutés avec le symbole <code class="docutils literal notranslate"><span class="pre">#</span></code> pour les lignes simples ou <code class="docutils literal notranslate"><span class="pre">'''</span> <span class="pre">...</span> <span class="pre">'''</span></code> pour les blocs multi-lignes.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ceci est un commentaire</span>
-<span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">Ceci est un commentaire</span>
-<span class="sd">multi-ligne</span>
-<span class="sd">&#39;&#39;&#39;</span>
+<p>Les commentaires sont des annotations dans le code qui sont ignorées par l’interpréteur Python. Ils sont utilisés pour expliquer et documenter le code, rendant ainsi le programme plus facile à comprendre et à maintenir. Les commentaires peuvent être utilisés pour décrire la logique, signaler des sections importantes, ou fournir des informations supplémentaires sur le fonctionnement du code.</p>
+<p>Les commentaires sur une seule ligne commencent par le symbole #. Tout ce qui suit le symbole # sur la même ligne est considéré comme un commentaire et est ignoré par l’interpréteur.</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
+<p># Ceci est un commentaire sur une seule ligne
+x = 5  # Initialisation de la variable x avec la valeur 5</p>
+</div></blockquote>
+<p>Les commentaires sur une seule ligne sont souvent utilisés pour ajouter des notes rapides ou des explications courtes directement au-dessus ou à côté du code pertinent.</p>
+<p>Pour écrire des commentaires qui s’étendent sur plusieurs lignes, il est courant d’utiliser des guillemets triples (« «  » ou “””). Bien que techniquement ces guillemets définissent une chaîne de caractères multilignes, lorsqu’ils ne sont pas assignés à une variable, Python les traite comme des commentaires.</p>
+<p><strong>Exemple :</strong>
+.. code-block:: python</p>
+<blockquote>
+<div><p>« «  »
+Ce commentaire s’étend sur plusieurs lignes.
+Il peut être utilisé pour fournir des explications détaillées ou
+pour commenter des sections de code plus longues.
+« «  »</p>
+<dl class="simple">
+<dt>def ma_fonction():</dt><dd><p>“””
+Cette fonction fait quelque chose de très important.
+Utilisez ce commentaire pour expliquer la logique complexe
+ou fournir des informations supplémentaires.
+“””
+pass</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Les commentaires multi-lignes sont utiles pour documenter des fonctions, expliquer des algorithmes complexes, ou fournir des descriptions détaillées de certaines parties du code.</p>
+<p>Les commentaires jouent un rôle crucial dans la documentation du code. Ils aident les développeurs à comprendre rapidement la fonctionnalité du code et à naviguer plus facilement dans le programme. Voici quelques bonnes pratiques pour l’utilisation des commentaires dans la documentation :</p>
+<ul class="simple">
+<li><p><strong>Décrire la finalité des fonctions et des classes</strong> : Utilisez des commentaires pour expliquer ce que fait une fonction ou une classe et pourquoi elle est nécessaire.</p></li>
+<li><p><strong>Expliquer la logique complexe</strong> : Pour les algorithmes ou les logiques complexes, ajoutez des commentaires pour décrire le processus étape par étape.</p></li>
+<li><p><strong>Marquer les sections importantes</strong> : Utilisez des commentaires pour signaler des sections importantes du code, telles que les initialisations, les boucles principales, ou les blocs de code critiques.</p></li>
+<li><p><strong>Fournir des exemples d’utilisation</strong> : Ajoutez des commentaires avec des exemples d’utilisation du code, montrant comment appeler une fonction ou utiliser une classe.</p></li>
+</ul>
+<p><strong>Exemple :</strong>
+.. code-block:: python</p>
+<blockquote>
+<div><dl>
+<dt>def calculer_somme(a, b):</dt><dd><p>« «  »
+Cette fonction calcule la somme de deux nombres.</p>
+<p>Args:
+a (int, float): Le premier nombre.
+b (int, float): Le deuxième nombre.</p>
+<p>Returns:
+int, float: La somme des deux nombres.</p>
+<p>Exemple :
+&gt;&gt;&gt; calculer_somme(5, 3)
+8
+« «  »
+return a + b</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Une documentation bien commentée aide non seulement à comprendre le code existant, mais facilite également la collaboration entre les développeurs et la maintenance du projet à long terme.</p>
 </section>
 <section id="mots-cles-du-langage">
 <h2>Mots-clés du langage<a class="headerlink" href="#mots-cles-du-langage" title="Lien vers cette rubrique">#</a></h2>
@@ -767,361 +885,207 @@
 <li><p><strong>module</strong> : Type d’un module, utilisé lors de l’importation avec les mots-clés <cite>import</cite> et <cite>from</cite>.</p></li>
 </ul>
 </section>
-<section id="programmation-fonctionnelle">
-<h2>Programmation fonctionnelle<a class="headerlink" href="#programmation-fonctionnelle" title="Lien vers cette rubrique">#</a></h2>
-<p>La programmation fonctionnelle est un paradigme qui traite le calcul comme l’évaluation de fonctions mathématiques et évite l’état mutable et les effets de bord. Python prend en charge la programmation fonctionnelle en permettant d’utiliser des fonctions comme objets de première classe, c’est-à-dire que les fonctions peuvent être passées en arguments, retournées par d’autres fonctions, et assignées à des variables.</p>
-<p><strong>Caractéristiques de la Programmation Fonctionnelle</strong></p>
-<ol class="arabic">
-<li><p><strong>Fonctions de Première Classe</strong> :
-Les fonctions peuvent être manipulées comme n’importe quel autre objet. Elles peuvent être passées en arguments, retournées par d’autres fonctions, ou assignées à des variables.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">carre</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
-
-<span class="k">def</span> <span class="nf">appliquer</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">appliquer</span><span class="p">(</span><span class="n">carre</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>  <span class="c1"># Affiche 25</span>
-</pre></div>
-</div>
-</li>
-<li><p><strong>Fonctions Anonymes (`lambda`)</strong> :
-Les fonctions anonymes, ou <cite>lambda</cite>, permettent de créer de petites fonctions sans avoir besoin de les nommer.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ajouter</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ajouter</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>  <span class="c1"># Affiche 7</span>
-</pre></div>
-</div>
-</li>
-<li><p><strong>Fonctions d’Ordre Supérieur</strong> :
-Ce sont des fonctions qui prennent d’autres fonctions en argument ou retournent des fonctions. Cela permet de créer des abstractions et de réutiliser du code.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">appliquer_deux_fois</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">appliquer_deux_fois</span><span class="p">(</span><span class="n">carre</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># Affiche 81</span>
-</pre></div>
-</div>
-</li>
-<li><p><strong>Immutabilité</strong> :
-La programmation fonctionnelle privilégie l’utilisation de structures de données immuables, ce qui réduit les effets de bord et facilite le raisonnement sur le code.</p></li>
-<li><p><strong>Récursion</strong> :
-Les fonctions peuvent s’appeler elles-mêmes pour résoudre des problèmes. La récursion est souvent utilisée en programmation fonctionnelle pour remplacer les boucles.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">factorielle</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorielle</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">factorielle</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># Affiche 120</span>
-</pre></div>
-</div>
-</li>
-</ol>
-<p><strong>Outils et Modules de Programmation Fonctionnelle en Python</strong></p>
-<p>Python fournit plusieurs outils et modules qui facilitent la programmation fonctionnelle :</p>
+<section id="operateurs-en-python">
+<h2>Opérateurs en Python<a class="headerlink" href="#operateurs-en-python" title="Lien vers cette rubrique">#</a></h2>
+<p>Python propose une large variété d’opérateurs pour manipuler des données et contrôler le flux d’exécution. Voici un aperçu des principaux types d’opérateurs et de leur utilisation.</p>
+<p><strong>Opérateurs arithmétiques</strong></p>
+<p>Les opérateurs arithmétiques permettent d’effectuer des opérations de calcul sur des valeurs numériques.</p>
 <ul>
-<li><p><strong>`map()`</strong> : Applique une fonction à tous les éléments d’un itérable et renvoie un nouvel itérable.</p>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">resultats</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">carre</span><span class="p">,</span> <span class="n">nombres</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">resultats</span><span class="p">)</span>  <span class="c1"># Affiche [1, 4, 9, 16]</span>
+<li><p><strong>Addition (``+``)</strong> : Additionne deux valeurs.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resultat</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span>  <span class="c1"># Résultat : 5</span>
 </pre></div>
 </div>
-</div></blockquote>
 </li>
-<li><p><strong>`filter()`</strong> : Filtre les éléments d’un itérable en appliquant une fonction de test qui renvoie <cite>True</cite> ou <cite>False</cite>.</p>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pairs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">nombres</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">pairs</span><span class="p">)</span>  <span class="c1"># Affiche [2, 4]</span>
+<li><p><strong>Soustraction (``-``)</strong> : Soustrait une valeur de l’autre.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resultat</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">-</span> <span class="mi">2</span>  <span class="c1"># Résultat : 3</span>
 </pre></div>
 </div>
-</div></blockquote>
 </li>
-<li><p><strong>`reduce()`</strong> : Réduit un itérable à une seule valeur en appliquant successivement une fonction. Ce module nécessite l’importation de <cite>functools</cite>.</p>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
-
-<span class="n">somme</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">nombres</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">somme</span><span class="p">)</span>  <span class="c1"># Affiche 10</span>
+<li><p><strong>Multiplication (``*``)</strong> : Multiplie deux valeurs.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resultat</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">2</span>  <span class="c1"># Résultat : 6</span>
 </pre></div>
 </div>
-</div></blockquote>
+</li>
+<li><p><strong>Division (``/``)</strong> : Divise une valeur par l’autre. Retourne un flottant.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resultat</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">2</span>  <span class="c1"># Résultat : 2.5</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Division entière (``//``)</strong> : Division qui renvoie uniquement la partie entière.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resultat</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">//</span> <span class="mi">2</span>  <span class="c1"># Résultat : 2</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Modulo (``%``)</strong> : Retourne le reste de la division.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resultat</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">%</span> <span class="mi">2</span>  <span class="c1"># Résultat : 1</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Exponentiation (``**``)</strong> : Élève un nombre à la puissance d’un autre.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resultat</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">**</span> <span class="mi">2</span>  <span class="c1"># Résultat : 9</span>
+</pre></div>
+</div>
 </li>
 </ul>
-<p><strong>Avantages de la Programmation Fonctionnelle</strong></p>
-<ul class="simple">
-<li><p><strong>Simplicité et Lisibilité</strong> : La séparation des préoccupations et l’utilisation de fonctions pures rendent le code plus facile à lire et à maintenir.</p></li>
-<li><p><strong>Tests Faciles</strong> : Les fonctions pures sont plus simples à tester, car leur sortie dépend uniquement de leurs entrées.</p></li>
-<li><p><strong>Concurrence</strong> : La programmation fonctionnelle facilite la gestion de la concurrence, car les fonctions n’ont pas d’état mutable.</p></li>
-</ul>
-<p><strong>Inconvénients</strong></p>
-<ul class="simple">
-<li><p><strong>Performance</strong> : La récursion peut être moins performante que les boucles pour certains problèmes, en particulier en raison de la surcharge d’appels de fonction.</p></li>
-<li><p><strong>Courbe d’Apprentissage</strong> : Les développeurs venant de paradigmes impératifs peuvent trouver la transition vers la programmation fonctionnelle plus difficile.</p></li>
-</ul>
-<p>La programmation fonctionnelle en Python offre un moyen puissant et flexible d’écrire du code clair et concis. En utilisant des fonctions de première classe, des fonctions anonymes, et des outils comme <cite>map()</cite>, <cite>filter()</cite>, et <cite>reduce()</cite>, les développeurs peuvent tirer parti des avantages de ce paradigme tout en profitant des capacités de Python.</p>
-</section>
-<section id="programmation-orientee-objet">
-<h2>Programmation orientée objet<a class="headerlink" href="#programmation-orientee-objet" title="Lien vers cette rubrique">#</a></h2>
-<p>La programmation orientée objet (POO) est un paradigme qui utilise des « objets » pour modéliser des entités du monde réel. Les objets combinent à la fois des données et des comportements, permettant ainsi une approche modulaire et réutilisable pour la conception de logiciels. Python prend en charge la POO de manière complète, offrant des mécanismes pour définir des classes, des objets, créer des instances, et utiliser l’héritage.</p>
-<p><strong>Concepts Clés de la POO</strong></p>
-<ol class="arabic">
-<li><p><strong>Classes et Objets</strong> :
-- Une classe est une structure qui définit un type d’objet, incluant des attributs (données) et des méthodes (comportements).
-- Un objet est une instance d’une classe. Chaque objet a ses propres valeurs d’attributs.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Voiture</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">marque</span><span class="p">,</span> <span class="n">modele</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">marque</span> <span class="o">=</span> <span class="n">marque</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">modele</span> <span class="o">=</span> <span class="n">modele</span>
-
-    <span class="k">def</span> <span class="nf">demarrer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La </span><span class="si">{self.marque}</span><span class="s2"> </span><span class="si">{self.modele}</span><span class="s2"> démarre.&quot;</span><span class="p">)</span>
-
-<span class="n">ma_voiture</span> <span class="o">=</span> <span class="n">Voiture</span><span class="p">(</span><span class="s2">&quot;Toyota&quot;</span><span class="p">,</span> <span class="s2">&quot;Corolla&quot;</span><span class="p">)</span>
-<span class="n">ma_voiture</span><span class="o">.</span><span class="n">demarrer</span><span class="p">()</span>  <span class="c1"># Affiche &quot;La Toyota Corolla démarre.&quot;</span>
-</pre></div>
-</div>
-</li>
-</ol>
-<ul class="simple">
-<li><p><strong>class</strong> : Déclare une nouvelle classe.</p></li>
-<li><p><strong>self</strong> : Représente l’instance actuelle.</p></li>
-<li><p><strong>__init__</strong> : Initialise une nouvelle instance.</p></li>
-</ul>
-<ol class="arabic" start="2">
-<li><p><strong>Attributs</strong> :
-- Les attributs sont des variables qui stockent des données relatives à un objet. Ils peuvent être définis à l’aide de <cite>self</cite> dans la méthode spéciale <cite>__init__</cite>.</p></li>
-<li><p><strong>Méthodes</strong> :
-- Les méthodes sont des fonctions définies à l’intérieur d’une classe qui décrivent les comportements d’un objet. Les méthodes doivent toujours inclure <cite>self</cite> comme premier paramètre pour faire référence à l’instance de l’objet.</p></li>
-<li><p><strong>Héritage</strong> :
-- L’héritage permet de créer une nouvelle classe (classe dérivée) à partir d’une classe existante (classe de base), en réutilisant les attributs et méthodes de la classe de base.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Vehicule</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">demarrer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Le véhicule démarre.&quot;</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">Moto</span><span class="p">(</span><span class="n">Vehicule</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">faire_du_bruit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La moto fait vroom!&quot;</span><span class="p">)</span>
-
-<span class="n">ma_moto</span> <span class="o">=</span> <span class="n">Moto</span><span class="p">()</span>
-<span class="n">ma_moto</span><span class="o">.</span><span class="n">demarrer</span><span class="p">()</span>  <span class="c1"># Affiche &quot;Le véhicule démarre.&quot;</span>
-<span class="n">ma_moto</span><span class="o">.</span><span class="n">faire_du_bruit</span><span class="p">()</span>  <span class="c1"># Affiche &quot;La moto fait vroom!&quot;</span>
-</pre></div>
-</div>
-</li>
-<li><p><strong>Polymorphisme</strong> :
-- Le polymorphisme permet d’utiliser des méthodes ayant le même nom mais un comportement différent en fonction de l’objet. Cela permet de traiter des objets de classes différentes de manière uniforme.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Chat</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">parler</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Miaulement&quot;</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">Chien</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">parler</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Aboiement&quot;</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">faire_parler</span><span class="p">(</span><span class="n">animal</span><span class="p">):</span>
-    <span class="n">animal</span><span class="o">.</span><span class="n">parler</span><span class="p">()</span>
-
-<span class="n">mon_chat</span> <span class="o">=</span> <span class="n">Chat</span><span class="p">()</span>
-<span class="n">mon_chien</span> <span class="o">=</span> <span class="n">Chien</span><span class="p">()</span>
-<span class="n">faire_parler</span><span class="p">(</span><span class="n">mon_chat</span><span class="p">)</span>  <span class="c1"># Affiche &quot;Miaulement&quot;</span>
-<span class="n">faire_parler</span><span class="p">(</span><span class="n">mon_chien</span><span class="p">)</span>  <span class="c1"># Affiche &quot;Aboiement&quot;</span>
-</pre></div>
-</div>
-</li>
-<li><p><strong>Encapsulation</strong> :
-- L’encapsulation consiste à regrouper des données (attributs) et des comportements (méthodes) dans une classe tout en restreignant l’accès direct à certaines données. Les attributs peuvent être rendus privés en les préfixant avec un double underscore <cite>__</cite>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CompteBancaire</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solde</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__solde</span> <span class="o">=</span> <span class="n">solde</span>  <span class="c1"># Attribut privé</span>
-
-    <span class="k">def</span> <span class="nf">deposer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">montant</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">__solde</span> <span class="o">+=</span> <span class="n">montant</span>
-
-    <span class="k">def</span> <span class="nf">afficher_solde</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Solde: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__solde</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="n">compte</span> <span class="o">=</span> <span class="n">CompteBancaire</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-<span class="n">compte</span><span class="o">.</span><span class="n">deposer</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
-<span class="n">compte</span><span class="o">.</span><span class="n">afficher_solde</span><span class="p">()</span>  <span class="c1"># Affiche &quot;Solde: 1500&quot;</span>
-<span class="c1"># print(compte.__solde)  # Provoque une erreur</span>
-</pre></div>
-</div>
-</li>
-</ol>
-<p><strong>Avantages de la Programmation Orientée Objet</strong></p>
-<ul class="simple">
-<li><p><strong>Modularité</strong> : Le code est organisé en modules, ce qui facilite sa maintenance et sa réutilisation.</p></li>
-<li><p><strong>Réutilisation</strong> : Les classes peuvent être réutilisées et étendues, ce qui réduit le besoin de duplication de code.</p></li>
-<li><p><strong>Abstraction</strong> : Les détails d’implémentation sont cachés, permettant aux utilisateurs d’interagir avec les objets sans connaître leur fonctionnement interne.</p></li>
-</ul>
-<p><strong>Inconvénients</strong></p>
-<ul class="simple">
-<li><p><strong>Complexité</strong> : La POO peut introduire une complexité supplémentaire dans la conception et la compréhension du code, surtout pour les petits projets.</p></li>
-<li><p><strong>Performance</strong> : L’utilisation intensive des classes et des objets peut parfois avoir un impact sur la performance, en raison de la surcharge associée à la gestion des objets.</p></li>
-</ul>
-<p>La programmation orientée objet est un puissant paradigme de développement qui permet de créer des logiciels modulaires et réutilisables. En exploitant les concepts de classes, d’héritage, de polymorphisme et d’encapsulation, les développeurs peuvent créer des applications plus maintenables et plus faciles à comprendre.</p>
-</section>
-<section id="methodes-speciales-et-surcharge-d-operateurs">
-<h2>Méthodes spéciales et surcharge d’opérateurs<a class="headerlink" href="#methodes-speciales-et-surcharge-d-operateurs" title="Lien vers cette rubrique">#</a></h2>
-<p>Les méthodes spéciales (ou « dunder ») en Python, également appelées méthodes magiques, sont des fonctions définies dans les classes qui permettent de définir le comportement d’un objet en réponse à certaines opérations. Elles sont entourées de doubles underscores (par exemple, <cite>__init__</cite>). La surcharge d’opérateurs consiste à redéfinir le comportement des opérateurs (comme <cite>+</cite>, <cite>-</cite>, <cite>*</cite>, etc.) pour les objets personnalisés en utilisant ces méthodes spéciales.</p>
-</section>
-<section id="methodes-speciales-courantes">
-<h2>Méthodes Spéciales Courantes<a class="headerlink" href="#methodes-speciales-courantes" title="Lien vers cette rubrique">#</a></h2>
-<ol class="arabic">
-<li><p><strong>Constructeur (`__init__`)</strong> :
-- La méthode <cite>__init__</cite> est appelée automatiquement lors de la création d’une instance d’une classe. Elle permet d’initialiser les attributs de l’objet.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
-
-<span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>  <span class="c1"># Affiche &quot;3 4&quot;</span>
-</pre></div>
-</div>
-</li>
-<li><p><strong>Représentation en chaîne (`__str__` et `__repr__`)</strong> :
-- <cite>__str__</cite> définit la représentation en chaîne d’un objet pour les utilisateurs. <cite>__repr__</cite> est utilisé pour la représentation en chaîne pour le débogage et doit renvoyer une chaîne qui pourrait être utilisée pour recréer l’objet.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Personne</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span>
-
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Personne: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nom</span><span class="si">}</span><span class="s2">&quot;</span>
-
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Personne(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nom</span><span class="si">!r}</span><span class="s2">)&quot;</span>
-
-<span class="n">p</span> <span class="o">=</span> <span class="n">Personne</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>  <span class="c1"># Affiche &quot;Personne: Alice&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>  <span class="c1"># Affiche &quot;Personne(&#39;Alice&#39;)&quot;</span>
-</pre></div>
-</div>
-</li>
-<li><p><strong>Surcharge des opérateurs</strong> :
-- Les opérateurs peuvent être surchargés en définissant des méthodes spéciales correspondantes.</p>
+<p><strong>Opérateurs de comparaison</strong></p>
+<p>Ces opérateurs comparent deux valeurs et renvoient un booléen (<code class="docutils literal notranslate"><span class="pre">True</span></code> ou <code class="docutils literal notranslate"><span class="pre">False</span></code>).</p>
 <ul>
-<li><p><strong>Addition (`__add__`)</strong> :
-- La méthode <cite>__add__</cite> permet de définir le comportement de l’opérateur <cite>+</cite> pour les objets de votre classe.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NombreComplexe</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">re</span><span class="p">,</span> <span class="n">im</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">re</span> <span class="o">=</span> <span class="n">re</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">im</span> <span class="o">=</span> <span class="n">im</span>
-
-    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">NombreComplexe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">re</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">re</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">im</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">im</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">re</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">im</span><span class="si">}</span><span class="s2">i&quot;</span>
-
-<span class="n">z1</span> <span class="o">=</span> <span class="n">NombreComplexe</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">z2</span> <span class="o">=</span> <span class="n">NombreComplexe</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">z3</span> <span class="o">=</span> <span class="n">z1</span> <span class="o">+</span> <span class="n">z2</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">z3</span><span class="p">)</span>  <span class="c1"># Affiche &quot;4 + 6i&quot;</span>
+<li><p><strong>Égal à (``==``)</strong> : Vérifie si les deux valeurs sont égales.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">==</span> <span class="mi">3</span>  <span class="c1"># Résultat : True</span>
 </pre></div>
 </div>
 </li>
-<li><p><strong>Égalité (`__eq__`)</strong> :
-- La méthode <cite>__eq__</cite> permet de définir le comportement de l’opérateur <cite>==</cite> pour les objets de votre classe.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
-
-    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span>
-
-<span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">p3</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span>  <span class="c1"># Affiche True</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p3</span><span class="p">)</span>  <span class="c1"># Affiche False</span>
+<li><p><strong>Différent de (``!=``)</strong> : Vérifie si les deux valeurs sont différentes.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">!=</span> <span class="mi">2</span>  <span class="c1"># Résultat : True</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Supérieur à (``&gt;``)</strong> : Vérifie si la première valeur est supérieure à la seconde.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">3</span>  <span class="c1"># Résultat : True</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Inférieur à (``&lt;``)</strong> : Vérifie si la première valeur est inférieure à la seconde.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">5</span>  <span class="c1"># Résultat : True</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Supérieur ou égal à (``&gt;=``)</strong> : Vérifie si la première valeur est supérieure ou égale à la seconde.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">&gt;=</span> <span class="mi">5</span>  <span class="c1"># Résultat : True</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Inférieur ou égal à (``&lt;=``)</strong> : Vérifie si la première valeur est inférieure ou égale à la seconde.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">&lt;=</span> <span class="mi">4</span>  <span class="c1"># Résultat : True</span>
 </pre></div>
 </div>
 </li>
 </ul>
+<p><strong>Opérateurs logiques</strong></p>
+<p>Les opérateurs logiques sont utilisés pour combiner plusieurs expressions de comparaison.</p>
+<ul>
+<li><p><strong>Et (``and``)</strong> : Retourne <code class="docutils literal notranslate"><span class="pre">True</span></code> si les deux conditions sont vraies.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># Résultat : True</span>
+</pre></div>
+</div>
 </li>
-<li><p><strong>Autres méthodes spéciales</strong> :
-- <cite>__len__</cite> : Définit le comportement de la fonction <cite>len()</cite>.
-- <cite>__getitem__</cite> : Permet l’accès à un élément via des indices (par exemple, <cite>obj[key]</cite>).
-- <cite>__setitem__</cite> : Permet de définir un élément via des indices.
-- <cite>__delitem__</cite> : Permet de supprimer un élément via des indices.
-- <cite>__iter__</cite> : Rend un objet itérable en renvoyant un itérateur.
-- <cite>__next__</cite> : Définit le comportement de l’itérateur pour renvoyer l’élément suivant.</p></li>
-</ol>
-<p>Exemple d’itérabilité personnalisée :</p>
+<li><p><strong>Ou (``or``)</strong> : Retourne <code class="docutils literal notranslate"><span class="pre">True</span></code> si au moins une des conditions est vraie.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># Résultat : True</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Non (``not``)</strong> : Inverse la valeur d’une condition.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="p">(</span><span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Résultat : False</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>Opérateurs d’affectation</strong></p>
+<p>Les opérateurs d’affectation permettent d’assigner des valeurs aux variables, souvent en combinant une opération.</p>
+<ul>
+<li><p><strong>Affectation simple (``=``)</strong> : Assigne une valeur à une variable.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Addition et affectation (``+=``)</strong> : Ajoute et affecte.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">+=</span> <span class="mi">3</span>  <span class="c1"># Équivaut à x = x + 3</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Soustraction et affectation (``-=``)</strong> : Soustrait et affecte.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">-=</span> <span class="mi">2</span>  <span class="c1"># Équivaut à x = x - 2</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Multiplication et affectation (``*=``)</strong> : Multiplie et affecte.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">*=</span> <span class="mi">4</span>  <span class="c1"># Équivaut à x = x * 4</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Division et affectation (``/=``)</strong> : Divise et affecte.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">/=</span> <span class="mi">2</span>  <span class="c1"># Équivaut à x = x / 2</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Division entière et affectation (``//=``, ``%=``, ``**=``)</strong> : Fonctionnent de la même manière que les précédents avec l’opérateur correspondant.</p></li>
+</ul>
+<p><strong>Opérateurs d’appartenance</strong></p>
+<p>Ces opérateurs vérifient si un élément appartient (ou non) à une séquence (comme une liste, une chaîne ou un tuple).</p>
+<ul>
+<li><p><strong>Dans (``in``)</strong> : Retourne <code class="docutils literal notranslate"><span class="pre">True</span></code> si l’élément est présent dans la séquence.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;a&#39;</span> <span class="ow">in</span> <span class="s1">&#39;actuaire&#39;</span>  <span class="c1"># Résultat : True</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Pas dans (``not in``)</strong> : Retourne <code class="docutils literal notranslate"><span class="pre">True</span></code> si l’élément n’est pas présent dans la séquence.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;z&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">&#39;actuaire&#39;</span>  <span class="c1"># Résultat : True</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>Opérateurs d’identité</strong></p>
+<p>Ces opérateurs comparent les emplacements mémoire de deux objets.</p>
+<ul>
+<li><p><strong>Est (``is``)</strong> : Retourne <code class="docutils literal notranslate"><span class="pre">True</span></code> si les deux objets sont identiques (même emplacement mémoire).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">a</span> <span class="ow">is</span> <span class="n">b</span>  <span class="c1"># Résultat : True</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>N’est pas (``is not``)</strong> : Retourne <code class="docutils literal notranslate"><span class="pre">True</span></code> si les deux objets ne sont pas identiques.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">b</span>  <span class="c1"># Résultat : True</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>Opérateurs binaires</strong></p>
+<p>Les opérateurs binaires effectuent des opérations au niveau des bits. Ils sont utilisés principalement pour manipuler les bits dans des applications plus avancées.</p>
+<ul>
+<li><p><strong>ET binaire (``&amp;``)</strong> : Compare les bits et retourne 1 si les deux bits sont 1.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resultat</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">&amp;</span> <span class="mi">3</span>  <span class="c1"># Résultat : 1 (101 &amp; 011 = 001)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>OU binaire (``|``)</strong> : Compare les bits et retourne 1 si au moins un des bits est 1.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resultat</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">|</span> <span class="mi">3</span>  <span class="c1"># Résultat : 7 (101 | 011 = 111)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>OU exclusif (``^``)</strong> : Retourne 1 si les bits sont différents.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resultat</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">^</span> <span class="mi">3</span>  <span class="c1"># Résultat : 6 (101 ^ 011 = 110)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Décalage à gauche (``&lt;&lt;``)</strong> : Décale les bits vers la gauche en ajoutant des zéros à droite.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resultat</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span>  <span class="c1"># Résultat : 10 (101 devient 1010)</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Décalage à droite (``&gt;&gt;``)</strong> : Décale les bits vers la droite en supprimant les bits les plus à droite.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resultat</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span>  <span class="c1"># Résultat : 2 (101 devient 10)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>Autres opérateurs</strong></p>
+<p>Les chaînes de caractères peuvent être concaténées, répétées et utilisées avec diverses méthodes de manipulation de texte :
+.. code-block:: python</p>
 <blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Compteur</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">limite</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">limite</span> <span class="o">=</span> <span class="n">limite</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="k">def</span> <span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span>
-
-    <span class="k">def</span> <span class="fm">__next__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">limite</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">current</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">current</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">StopIteration</span>
-
-<span class="n">compteur</span> <span class="o">=</span> <span class="n">Compteur</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="n">compteur</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>  <span class="c1"># Affiche 1, 2, 3</span>
-</pre></div>
-</div>
+<div><p>s1 = « Bonjour »
+s2 = « le monde »</p>
+<p># Concaténation
+s3 = s1 + «  «  + s2  # « Bonjour le monde »</p>
+<p># Répétition
+s4 = s1 * 3  # « BonjourBonjourBonjour »</p>
+<p># Méthodes de chaîne de caractères
+s5 = s1.upper()  # « BONJOUR »
+s6 = s1.lower()  # « bonjour »</p>
 </div></blockquote>
-</section>
-<section id="generateurs">
-<h2>Générateurs<a class="headerlink" href="#generateurs" title="Lien vers cette rubrique">#</a></h2>
-<p>Les générateurs sont une fonctionnalité puissante de Python qui permet de créer des itérateurs de manière simple et efficace. Ils permettent de produire des séquences de valeurs sans avoir à les stocker toutes en mémoire, ce qui les rend particulièrement utiles pour gérer de grandes quantités de données ou des flux de données.</p>
-<p><strong>Définition d’un Générateur</strong></p>
-<p>Un générateur est une fonction qui utilise le mot-clé <cite>yield</cite> au lieu de <cite>return</cite>. Lorsqu’un générateur est appelé, il renvoie un itérateur qui peut être utilisé pour générer des valeurs une par une, plutôt que de calculer toutes les valeurs à l’avance.</p>
-<p>Voici un exemple de générateur qui produit une séquence de nombres carrés :</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_squares</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="k">yield</span> <span class="n">i</span> <span class="o">**</span> <span class="mi">2</span>
-</pre></div>
-</div>
-<p><strong>Utilisation d’un Générateur</strong></p>
-<p>Pour utiliser un générateur, vous pouvez l’itérer avec une boucle <cite>for</cite>, ou utiliser la fonction <cite>next()</cite> pour obtenir les valeurs une à une.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="n">generate_squares</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">square</span> <span class="ow">in</span> <span class="n">squares</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">square</span><span class="p">)</span>  <span class="c1"># Affiche 0, 1, 4, 9, 16</span>
-
-<span class="c1"># Ou en utilisant next()</span>
-<span class="n">squares</span> <span class="o">=</span> <span class="n">generate_squares</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">squares</span><span class="p">))</span>  <span class="c1"># Affiche 0</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">squares</span><span class="p">))</span>  <span class="c1"># Affiche 1</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">next</span><span class="p">(</span><span class="n">squares</span><span class="p">))</span>  <span class="c1"># Affiche 4</span>
-<span class="c1"># print(next(squares))  # Lève une exception StopIteration</span>
-</pre></div>
-</div>
-<p><strong>Avantages des Générateurs</strong></p>
-<ol class="arabic simple">
-<li><p><strong>Mémoire Efficace</strong> :
-- Les générateurs ne chargent pas toutes les valeurs en mémoire, ce qui les rend particulièrement utiles pour travailler avec des ensembles de données volumineux.</p></li>
-<li><p><strong>Exécution Paresseuse</strong> :
-- Les générateurs ne calculent les valeurs que lorsque cela est nécessaire, ce qui peut améliorer les performances et réduire le temps d’exécution dans certains cas.</p></li>
-<li><p><strong>Code Plus Lisible</strong> :
-- Les générateurs permettent d’écrire du code plus clair et plus concis en remplaçant les classes d’itérateurs par des fonctions simples.</p></li>
-</ol>
-<p><strong>Exemple de Générateur avec État</strong></p>
-<p>Les générateurs peuvent également maintenir un état entre les appels grâce à leur nature. Voici un exemple d’un générateur qui produit une séquence infinie de nombres naturels :</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_up_to</span><span class="p">(</span><span class="nb">max</span><span class="p">):</span>
-    <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">while</span> <span class="n">count</span> <span class="o">&lt;=</span> <span class="nb">max</span><span class="p">:</span>
-        <span class="k">yield</span> <span class="n">count</span>
-        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
-
-<span class="n">counter</span> <span class="o">=</span> <span class="n">count_up_to</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">counter</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>  <span class="c1"># Affiche 1, 2, 3</span>
-</pre></div>
-</div>
-<p>Les générateurs sont un outil précieux en Python pour créer des itérateurs légers et efficaces. Ils facilitent le traitement des flux de données et permettent de conserver la mémoire tout en maintenant un code clair et facile à comprendre. Grâce aux générateurs, il est possible d’écrire des programmes qui gèrent de grandes quantités de données de manière efficace et élégante.</p>
+<p>Cette section fournit une vue d’ensemble de tous les opérateurs Python, facilitant la compréhension de leur utilisation dans diverses expressions et leur priorité d’évaluation.</p>
 </section>
 </section>
 
@@ -1145,11 +1109,11 @@ Les fonctions peuvent s’appeler elles-mêmes pour résoudre des problèmes. La
       </div>
     </a>
     <a class="right-next"
-       href="structures_de_donnees.html"
+       href="operateurs.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">suivant</p>
-        <p class="prev-next-title">Structures de Données en Python</p>
+        <p class="prev-next-title">Opérateurs en Python</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
