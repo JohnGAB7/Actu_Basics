@@ -1,4 +1,4 @@
-5. Les Types de données en Python
+6. Les Types de données en Python
 =================================
 
 Python propose une variété de types de données pour stocker et manipuler différentes formes d'informations. Ils se divisent principalement en deux catégories : les types de base et les structures de données intégrées.

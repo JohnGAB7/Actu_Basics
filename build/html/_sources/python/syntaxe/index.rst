@@ -6,7 +6,7 @@ Syntaxe du langage Python
 Bienvenue dans la section liée à la syntaxe du langage Python !
 
 .. toctree::
-   :maxdepth: 10
+   :maxdepth: 2
    :caption: Sommaire
 
    introduction

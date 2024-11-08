@@ -86,6 +86,7 @@ html_theme_options = {
     "use_edit_page_button": True,
     "show_toc_level": 10,
     "navbar_align": "left",
+    "show_nav_level": 2 ,
     "announcement": "Bienvenue sur ma page destinée à l'apprentissage de logiciels pour L'Actuaire|Data Scientist",
     "show_version_warning_banner": True,
     "footer_start": ["copyright"],

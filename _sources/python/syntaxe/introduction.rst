@@ -1,5 +1,5 @@
-Introduction
-=============
+1. Généralités
+================
 
 La syntaxe d'un langage de programmation définit les règles qui régissent la structure et l'ordonnancement des instructions. Une syntaxe claire et cohérente est essentielle pour plusieurs raisons :
 

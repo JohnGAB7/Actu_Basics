@@ -1,4 +1,4 @@
-2. Déclaration de Variables
+3. Déclaration de Variables
 ===========================
 
 La déclaration de variables en Python est fondamentale pour stocker et manipuler des données. Dans cette sous-section, nous couvrirons les conventions de nommage, les types de données de base et des techniques avancées comme l'affectation multiple.

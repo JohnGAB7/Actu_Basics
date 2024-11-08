@@ -1,4 +1,4 @@
-1. Indentation
+2. Indentation
 ===============
 
 L'indentation est essentielle en Python, car elle détermine la structure du code en délimitant les blocs logiques, comme les fonctions, les boucles, et les conditions. Contrairement à de nombreux autres langages de programmation qui utilisent des symboles comme ``{}`` ou ``;`` pour structurer le code, Python s'appuie sur l'indentation. Chaque bloc de code est défini par son indentation, ce qui rend le code plus lisible et plus structuré. L'indentation est cruciale en Python, car elle détermine la hiérarchie des instructions; une indentation correcte est essentielle pour le bon fonctionnement du programme, et des erreurs d'indentation peuvent entraîner des erreurs de syntaxe.

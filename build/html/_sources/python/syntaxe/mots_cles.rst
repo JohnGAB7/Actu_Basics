@@ -1,4 +1,4 @@
-4. Mots-clés du langage
+5. Mots-clés du langage
 ========================
 
 Les mots-clés sont des termes réservés dans Python, destinés à structurer le langage et gérer les contrôles de flux et d’exécution. Ils ne peuvent pas être utilisés comme identifiants (noms de variables ou fonctions). La liste des mots-clés est disponible avec ``keyword.kwlist`` dans le module ``keyword``.
