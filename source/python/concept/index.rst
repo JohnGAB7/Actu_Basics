@@ -1,9 +1,7 @@
 .. _concept-index:
 
-Concepts de base du langage
-===============================
-
-Bienvenue dans la section liée aux concepts de base du langage Python !
+II. Concepts de base du langage
+====================================
 
 .. toctree::
    :maxdepth: 2

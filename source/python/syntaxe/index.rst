@@ -1,9 +1,7 @@
 .. _syntaxe-index:
 
-Syntaxe du langage Python
-============================
-
-Bienvenue dans la section liée à la syntaxe du langage Python !
+I. Syntaxe du langage Python
+================================
 
 .. toctree::
    :maxdepth: 2

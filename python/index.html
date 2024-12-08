@@ -44,6 +44,7 @@
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/translations.js?v=e6b791cb"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'python/index';</script>
     <link rel="icon" href="../_static/log.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -53,7 +54,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="fr"/>
   <meta name="docsearch:version" content="" />
-    <meta name="docbuild:last-update" content="08 novembre 2024"/>
+    <meta name="docbuild:last-update" content="08 décembre 2024"/>
   </head>
   
   
@@ -457,7 +458,7 @@
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Qu’est-ce que Python ?</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="syntaxe/index.html">Syntaxe du langage Python</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="syntaxe/index.html">I. Syntaxe du langage Python</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="syntaxe/introduction.html">1. Généralités</a></li>
 <li class="toctree-l2"><a class="reference internal" href="syntaxe/indentation.html">2. Indentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="syntaxe/declaration.html">3. Déclaration de Variables</a></li>
@@ -465,7 +466,7 @@
 <li class="toctree-l2"><a class="reference internal" href="syntaxe/types_donnees.html">6. Les Types de données en Python</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="concept/index.html">Concepts de base du langage</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="concept/index.html">II. Concepts de base du langage</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="concept/operateurs.html">1. Opérateurs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="concept/structure_de_controle.html">2. Structures de contrôle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="concept/fonctions.html">3. Fonctions</a></li>
@@ -473,6 +474,18 @@
 
 <li class="toctree-l2"><a class="reference internal" href="concept/modules.html">5. Modules et importations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="concept/comprehension.html">6. Compréhensions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="manipulation/index.html">III. Manipulation des données</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="manipulation/introduction.html">Introduction aux bibliothèques Pandas et NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulation/chargement.html">Chargement, nettoyage et manipulation des données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manipulation/visualisation.html">Visualisation de données avec Matplotlib et Seaborn</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="baseactu/index.html">IV. Base des Sciences Actuarielles</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="baseactu/introduction.html">Rappels Clés</a></li>
+<li class="toctree-l2"><a class="reference internal" href="baseactu/annuites.html">Calcul des annuités</a></li>
+<li class="toctree-l2"><a class="reference internal" href="baseactu/rentes.html">Rentes viagères</a></li>
 </ul>
 </details></li>
 </ul>
@@ -531,14 +544,55 @@
 <section id="python">
 <h1>Python<a class="headerlink" href="#python" title="Lien vers cette rubrique">#</a></h1>
 <p>Bienvenue dans la section Python de ce projet ! Ici, vous plongerez dans l’univers de ce langage incontournable qui est devenu un pilier central dans le domaine de l’analyse de données, de l’automatisation et de la modélisation, particulièrement dans des secteurs comme l’actuariat et la data science. À travers cette section, nous vous fournirons non seulement une introduction aux bases de Python, mais aussi des outils pratiques pour vous aider à maîtriser ce langage puissant et flexible.</p>
-<p>La programmation est devenue une compétence essentielle dans notre monde moderne, où les technologies évoluent rapidement et où les données jouent un rôle central dans la prise de décision. Python est devenu le langage préféré des analystes de données, des chercheurs et des développeurs, et il est particulièrement prisé pour sa simplicité, sa lisibilité et la richesse de ses bibliothèques. Grâce à sa popularité et sa capacité à s’intégrer dans une multitude d’environnements, il permet de traiter une large gamme de tâches, allant de l’analyse de données complexes à la création d’applications web ou à la modélisation financière.</p>
-<section id="objectifs-du-projet">
-<h2>Objectifs du Projet<a class="headerlink" href="#objectifs-du-projet" title="Lien vers cette rubrique">#</a></h2>
-<p>L’objectif principal de ce projet est de vous fournir les bases solides de la programmation en Python, en mettant l’accent sur les aspects les plus pertinents pour l’analyse de données et l’actuariat. Vous apprendrez les concepts clés du langage, les structures de données essentielles et comment les appliquer pour résoudre des problèmes pratiques. À la fin de ce parcours, vous serez en mesure de manipuler des données, d’effectuer des calculs complexes et de créer des solutions efficaces grâce à Python.</p>
+<section id="objectifs">
+<h2>Objectifs<a class="headerlink" href="#objectifs" title="Lien vers cette rubrique">#</a></h2>
+<p>L’objectif principal de cette section est de vous fournir des bases solides en programmation Python, tout en intégrant les concepts clés de l’actuariat de manière progressive. Les objectifs spécifiques incluent :</p>
+<ol class="arabic simple">
+<li><dl class="simple">
+<dt><strong>Maîtriser les bases de Python</strong> :</dt><dd><ul class="simple">
+<li><p>Comprendre la syntaxe de Python, les structures de contrôle, et les structures de données de base.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Manipuler des données avec Python</strong> :</dt><dd><ul class="simple">
+<li><p>Utiliser les bibliothèques Pandas et NumPy pour le traitement et l’analyse de données.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Créer des visualisations de données</strong> :</dt><dd><ul class="simple">
+<li><p>Utiliser Matplotlib et Seaborn pour créer des graphiques et visualiser les données de manière efficace.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Appliquer Python dans des contextes actuariels</strong> :</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>Aborder les concepts actuariels avec un niveau de difficulté croissant, en commençant par les bases :</dt><dd><ul>
+<li><p>Comprendre les principes fondamentaux de l’actuariat.</p></li>
+<li><p>Calcul des réserves.</p></li>
+<li><p>Analyse de la mortalité et de la morbidité.</p></li>
+<li><p>Tarification des assurances vie et santé.</p></li>
+<li><p>Modélisation des risques.</p></li>
+<li><p>Évaluation des provisions techniques.</p></li>
+<li><p>Utilisation des modèles de survie et d’actuariat financier.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
 </section>
-<section id="contenu-du-projet">
-<h2>Contenu du Projet<a class="headerlink" href="#contenu-du-projet" title="Lien vers cette rubrique">#</a></h2>
-<p>Cette section est structurée pour vous guider progressivement dans l’apprentissage de Python. Nous commencerons par une introduction au langage Python, où vous découvrirez ses principales caractéristiques et ses avantages dans le contexte de l’analyse de données. Ensuite, nous passerons en revue les bases essentielles telles que la syntaxe, l’indentation, la déclaration de variables et les types de données.</p>
+<section id="contenu">
+<h2>Contenu<a class="headerlink" href="#contenu" title="Lien vers cette rubrique">#</a></h2>
+<p>Cette section est structurée pour vous guider progressivement dans l’apprentissage de Python et de l’actuariat. Nous commencerons par une introduction au langage Python, où vous découvrirez ses principales caractéristiques et ses avantages dans le contexte de l’analyse de données. Ensuite, nous passerons en revue les bases essentielles telles que la syntaxe, l’indentation, la déclaration de variables et les types de données.</p>
 <p>Vous apprendrez à manipuler les différentes structures de données intégrées à Python, comme les listes, les dictionnaires, les tuples et les sets, et à comprendre leur utilisation dans différents contextes. Nous approfondirons également les opérateurs et les structures de contrôle, vous permettant de créer des programmes plus puissants et flexibles. Ce projet inclut également des sections sur les modules et bibliothèques clés, en particulier celles utilisées dans la data science, telles que NumPy, Pandas, et Matplotlib, pour effectuer des analyses et des visualisations de données.</p>
 <p>En parallèle, nous aborderons des concepts avancés tels que les fonctions, les exceptions, et la gestion des erreurs, qui sont cruciaux pour écrire du code robuste et facile à maintenir. Vous découvrirez aussi les compréhensions de listes et de dictionnaires, qui vous aideront à écrire du code Python plus concis et performant.</p>
 <p>À travers des exemples pratiques et des cas d’utilisation réels, vous consoliderez vos compétences pour appliquer Python dans des projets d’analyse de données et de modélisation. Ce parcours vous préparera à utiliser Python dans des environnements professionnels, notamment pour l’automatisation des tâches et la résolution de problèmes complexes dans le domaine de l’actuariat.</p>
@@ -546,32 +600,11 @@
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Qu’est-ce que Python ?</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#caracteristiques-et-avantages-de-python">Caractéristiques et avantages de Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#applications-de-python">Applications de Python</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#comment-installer-python">Comment installer Python ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#comment-choisir-et-installer-un-ide">Comment choisir et installer un IDE ?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="introduction.html#qu-est-ce-qu-un-interpreteur">Qu’est ce qu’un interpréteur ?</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="syntaxe/index.html">Syntaxe du langage Python</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="syntaxe/introduction.html">1. Généralités</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntaxe/indentation.html">2. Indentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntaxe/declaration.html">3. Déclaration de Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntaxe/mots_cles.html">5. Mots-clés du langage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="syntaxe/types_donnees.html">6. Les Types de données en Python</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="concept/index.html">Concepts de base du langage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="concept/operateurs.html">1. Opérateurs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="concept/structure_de_controle.html">2. Structures de contrôle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="concept/fonctions.html">3. Fonctions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="concept/entrees_sorties.html">4. Entrées et Sorties</a></li>
-<li class="toctree-l2"><a class="reference internal" href="concept/entrees_sorties.html#gestion-des-erreurs-et-exceptions">Gestion des erreurs et exceptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="concept/modules.html">5. Modules et importations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="concept/comprehension.html">6. Compréhensions</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Qu’est-ce que Python ?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntaxe/index.html">I. Syntaxe du langage Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concept/index.html">II. Concepts de base du langage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manipulation/index.html">III. Manipulation des données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="baseactu/index.html">IV. Base des Sciences Actuarielles</a></li>
 </ul>
 </div>
 </section>
