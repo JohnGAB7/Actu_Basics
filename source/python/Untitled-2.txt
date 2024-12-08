@@ -1,0 +1,158 @@
+Chapitre : Syntaxe en Python
+Introduction à la syntaxe de Python
+
+Présentation générale de Python
+
+Importance de la syntaxe dans la programmation
+
+Comparaison avec d'autres langages
+
+Commentaires
+
+Commentaires sur une seule ligne
+
+Commentaires multi-lignes
+
+Utilisation des commentaires pour la documentation
+
+Indentation
+
+Rôle de l'indentation en Python
+
+Comparaison avec les accolades dans d'autres langages
+
+Bonnes pratiques pour l'indentation
+
+Variables et Types de données
+
+Déclaration et affectation des variables
+
+Typage dynamique
+
+Types de données de base (int, float, str, bool)
+
+Structures de données (listes, tuples, ensembles, dictionnaires)
+
+Conversion de types (casting)
+
+Opérateurs
+
+Opérateurs arithmétiques
+
+Opérateurs de comparaison
+
+Opérateurs logiques
+
+Opérateurs d'affectation
+
+Opérateurs bit à bit
+
+Structures de contrôle
+
+Conditions (if, elif, else)
+
+Boucles (for, while)
+
+Instructions de contrôle de boucle (break, continue, pass)
+
+Fonctions
+
+Définition et appel de fonctions
+
+Paramètres et arguments
+
+Valeurs de retour
+
+Fonctions lambda (fonctions anonymes)
+
+Portée des variables (global, local)
+
+Entrées et Sorties
+
+Fonction input()
+
+Affichage avec print()
+
+Formatage des chaînes de caractères
+
+Gestion des erreurs et exceptions
+
+Instructions try, except, else, finally
+
+Levée d'exceptions (raise)
+
+Bonnes pratiques pour la gestion des exceptions
+
+Modules et importations
+
+Importation de modules
+
+Utilisation des fonctions et classes des modules
+
+Création de modules
+
+Gestion des dépendances avec pip
+
+Compréhensions
+
+Compréhensions de listes
+
+Compréhensions de dictionnaires
+
+Compréhensions de sets
+
+Compréhensions avec des conditions
+
+Programmation orientée objet (POO)
+
+Définition de classes
+
+Instanciation d'objets
+
+Attributs et méthodes
+
+Héritage et polymorphisme
+
+Méthodes spéciales et surcharge d'opérateurs
+
+Générateurs
+
+Introduction aux générateurs
+
+Utilisation de yield
+
+Générateurs et itérateurs
+
+Avantages des générateurs
+
+Manipulation des fichiers
+
+Ouverture et fermeture de fichiers
+
+Lecture et écriture dans les fichiers
+
+Gestion des erreurs de fichiers
+
+Expressions régulières
+
+Introduction aux expressions régulières
+
+Utilisation du module re
+
+Recherches, correspondances et substitutions
+
+Gestion de la mémoire et des ressources
+
+Gestion automatique de la mémoire (Garbage Collection)
+
+Context Managers (with)
+
+Optimisation de la mémoire
+
+Bibliothèques et frameworks courants
+
+Présentation de bibliothèques populaires (NumPy, Pandas, Matplotlib, etc.)
+
+Utilisation des bibliothèques
+
+Intégration et gestion des projets
