@@ -552,23 +552,21 @@
 <section id="valeur-actuelle-et-valeur-future">
 <h2>Valeur actuelle et valeur future<a class="headerlink" href="#valeur-actuelle-et-valeur-future" title="Lien vers cette rubrique">#</a></h2>
 <p>La valeur actuelle (VA) est la valeur aujourd’hui d’une somme d’argent qui sera reçue ou payée à une date future. La valeur future (VF) est la valeur à une date future d’une somme d’argent investie ou empruntée aujourd’hui.</p>
-<p>### Formules de base</p>
-<p>La formule de la valeur future est :
-.. math:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VF</span> <span class="o">=</span> <span class="n">VA</span> \<span class="n">cdot</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span><span class="o">^</span><span class="n">n</span>
-</pre></div>
-</div>
-<p>La formule de la valeur actuelle est :
-.. math:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">VA</span> <span class="o">=</span> \<span class="n">frac</span><span class="p">{</span><span class="n">VF</span><span class="p">}{(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">r</span><span class="p">)</span><span class="o">^</span><span class="n">n</span><span class="p">}</span>
-</pre></div>
-</div>
-<p>où:
--   <em>VF</em> : Valeur future
--   <em>VA</em> : Valeur actuelle
--   <em>r</em> : Taux d’intérêt par période
--   <em>n</em> : Nombre de périodes</p>
-<p>### Exemple de calcul</p>
+<p><strong>Formules de base</strong></p>
+<p>La formule de la valeur future est :</p>
+<div class="math notranslate nohighlight">
+\[VF = VA \cdot (1 + r)^n\]</div>
+<p>La formule de la valeur actuelle est :</p>
+<div class="math notranslate nohighlight">
+\[VA = \frac{VF}{(1 + r)^n}\]</div>
+<p>où:</p>
+<ul class="simple">
+<li><p><em>VF</em> : Valeur future</p></li>
+<li><p><em>VA</em> : Valeur actuelle</p></li>
+<li><p><em>r</em> : Taux d’intérêt par période</p></li>
+<li><p><em>n</em> : Nombre de périodes</p></li>
+</ul>
+<p><strong>Exemple de calcul</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcul de la valeur future</span>
 <span class="n">valeur_actuelle</span> <span class="o">=</span> <span class="mi">1000</span>
 <span class="n">taux_interet</span> <span class="o">=</span> <span class="mf">0.05</span>
@@ -582,25 +580,29 @@
 <section id="interets-simples-et-composes">
 <h2>Intérêts simples et composés<a class="headerlink" href="#interets-simples-et-composes" title="Lien vers cette rubrique">#</a></h2>
 <p>Les intérêts peuvent être calculés de deux manières : simples ou composés.</p>
-<p>### Intérêts simples</p>
+<p><strong>Intérêts simples</strong></p>
 <p>Les intérêts simples sont calculés uniquement sur le montant initial investi ou emprunté.</p>
 <div class="math notranslate nohighlight">
-\[I_{simple} = P \cdot r \cdot t\]</div>
-<p>où:
--   <em>I_{simple}</em> : Intérêts simples
--   <em>P</em> : Principal (montant initial)
--   <em>r</em> : Taux d’intérêt
--   <em>t</em> : Temps</p>
-<p>### Intérêts composés</p>
+\[I_{\text{simple}} = P \cdot r \cdot t\]</div>
+<p>où:</p>
+<ul class="simple">
+<li><p><em>I_simple</em> : Intérêts simples</p></li>
+<li><p><em>P</em> : Principal (montant initial)</p></li>
+<li><p><em>r</em> : Taux d’intérêt</p></li>
+<li><p><em>t</em> : Temps</p></li>
+</ul>
+<p><strong>Intérêts composés</strong></p>
 <p>Les intérêts composés sont calculés sur le montant initial ainsi que sur les intérêts accumulés des périodes précédentes.</p>
 <div class="math notranslate nohighlight">
-\[I_{compose} = P \cdot (1 + r)^t - P\]</div>
-<p>où:
--   <em>I_{compose}</em> : Intérêts composés
--   <em>P</em> : Principal (montant initial)
--   <em>r</em> : Taux d’intérêt
--   <em>t</em> : Temps</p>
-<p>### Exemple de calcul</p>
+\[I_{\text{compose}} = P \cdot (1 + r)^t - P\]</div>
+<p>où:</p>
+<ul class="simple">
+<li><p><em>I_compose</em> : Intérêts composés</p></li>
+<li><p><em>P</em> : Principal (montant initial)</p></li>
+<li><p><em>r</em> : Taux d’intérêt</p></li>
+<li><p><em>t</em> : Temps</p></li>
+</ul>
+<p><strong>Exemple de calcul</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcul des intérêts simples et composés</span>
 <span class="n">principal</span> <span class="o">=</span> <span class="mi">1000</span>
 <span class="n">taux_interet</span> <span class="o">=</span> <span class="mf">0.05</span>
@@ -620,16 +622,16 @@
 <p>Le taux d’intérêt nominal est le taux d’intérêt annuel indiqué qui ne prend pas en compte la capitalisation des intérêts. C’est le taux que l’on voit le plus souvent dans les publicités bancaires.</p>
 <p>### Taux d’intérêt effectif</p>
 <p>Le taux d’intérêt effectif, ou taux annuel effectif global (TAEG), prend en compte l’effet de la capitalisation des intérêts. Il représente le taux réel appliqué sur une période donnée.</p>
-<p>La relation entre le taux nominal (r_nominal) et le taux effectif (r_effectif) est donnée par :
-.. math:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">r_</span><span class="p">{</span><span class="n">effectif</span><span class="p">})</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> \<span class="n">frac</span><span class="p">{</span><span class="n">r_</span><span class="p">{</span><span class="n">nominal</span><span class="p">}}{</span><span class="n">m</span><span class="p">})</span><span class="o">^</span><span class="n">m</span>
-</pre></div>
-</div>
-<p>où:
--   <em>r_{nominal}</em> : Taux d’intérêt nominal
--   <em>r_{effectif}</em> : Taux d’intérêt effectif
--   <em>m</em> : Nombre de périodes de capitalisation par an</p>
-<p>### Exemple de calcul</p>
+<p>La relation entre le taux nominal (r_nominal) et le taux effectif (r_effectif) est donnée par :</p>
+<div class="math notranslate nohighlight">
+\[(1 + r_{\text{effectif}}) = \left(1 + \frac{r_{\text{nominal}}}{m}\right)^m\]</div>
+<p>où:</p>
+<ul class="simple">
+<li><p><em>r_nominal</em> : Taux d’intérêt nominal</p></li>
+<li><p><em>r_effectif</em> : Taux d’intérêt effectif</p></li>
+<li><p><em>m</em> : Nombre de périodes de capitalisation par an</p></li>
+</ul>
+<p><strong>Exemple de calcul</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcul du taux d&#39;intérêt effectif</span>
 <span class="n">taux_nominal</span> <span class="o">=</span> <span class="mf">0.06</span>
 <span class="n">periodes_par_an</span> <span class="o">=</span> <span class="mi">4</span>
@@ -641,26 +643,26 @@
 </section>
 <section id="taux-d-escompte-nominal-et-taux-d-escompte-effectif">
 <h2>Taux d’escompte nominal et taux d’escompte effectif<a class="headerlink" href="#taux-d-escompte-nominal-et-taux-d-escompte-effectif" title="Lien vers cette rubrique">#</a></h2>
-<p>### Taux d’escompte nominal</p>
+<p><strong>Taux d’escompte nominal</strong></p>
 <p>Le taux d’escompte nominal est le taux utilisé pour calculer les escomptes sur une base annuelle sans tenir compte de la fréquence de l’escompte.</p>
 <p>### Taux d’escompte effectif</p>
 <p>Le taux d’escompte effectif prend en compte la fréquence de l’escompte, reflétant ainsi le taux réel appliqué sur une période donnée.</p>
-<p>La relation entre le taux d’escompte nominal (d_nominal) et le taux d’escompte effectif (d_effectif) est donnée par :
-.. math:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">d_</span><span class="p">{</span><span class="n">effectif</span><span class="p">})</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> \<span class="n">frac</span><span class="p">{</span><span class="n">d_</span><span class="p">{</span><span class="n">nominal</span><span class="p">}}{</span><span class="n">m</span><span class="p">})</span><span class="o">^</span><span class="n">m</span>
-</pre></div>
-</div>
-<p>où:
--   <em>d_{nominal}</em> : Taux d’escompte nominal
--   <em>d_{effectif}</em> : Taux d’escompte effectif
--   <em>m</em> : Nombre de périodes d’escompte par an</p>
-<p>### Exemple de calcul</p>
+<p>La relation entre le taux d’escompte nominal (d_nominal) et le taux d’escompte effectif (d_effectif) est donnée par :</p>
+<div class="math notranslate nohighlight">
+\[(1 - d_{\text{effectif}}) = \left(1 - \frac{d_{\text{nominal}}}{m}\right)^m\]</div>
+<p>où:</p>
+<ul class="simple">
+<li><p><em>d_nominal</em> : Taux d’escompte nominal</p></li>
+<li><p><em>d_effectif</em> : Taux d’escompte effectif</p></li>
+<li><p><em>m</em> : Nombre de périodes d’escompte par an</p></li>
+</ul>
+<p><strong>Exemple de calcul</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcul du taux d&#39;escompte effectif</span>
 <span class="n">taux_escompte_nominal</span> <span class="o">=</span> <span class="mf">0.06</span>
 <span class="n">periodes_par_an</span> <span class="o">=</span> <span class="mi">4</span>
 
 <span class="n">taux_escompte_effectif</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">taux_escompte_nominal</span> <span class="o">/</span> <span class="n">periodes_par_an</span><span class="p">)</span> <span class="o">**</span> <span class="n">periodes_par_an</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Taux d</span><span class="se">\&#39;</span><span class="s1">Escompte Effectif: </span><span class="si">{taux_escompte_effectif}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Taux d</span><span class="se">\&#39;</span><span class="s1">Escompte Effectif: </span><span class="si">{</span><span class="n">taux_escompte_effectif</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>

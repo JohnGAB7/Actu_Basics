@@ -8,26 +8,26 @@ Types d'annuités
 
 Il existe plusieurs types d'annuités, notamment les annuités ordinaires, les annuités anticipées, les annuités perpétuelles, et les annuités différées.
 
-### Annuité ordinaire
+-   Annuité ordinaire
 
 Les paiements sont effectués à la fin de chaque période.
 
-### Annuité anticipée
+-   Annuité anticipée
 
 Les paiements sont effectués au début de chaque période.
 
-### Annuité perpétuelle
+-   Annuité perpétuelle
 
 Les paiements sont effectués indéfiniment.
 
-### Annuité différée
+-   Annuité différée
 
 Les paiements commencent après une certaine période de différé.
 
 Formules de calcul des annuités
 ---------------------------------------
 
-### Valeur actuelle d'une annuité ordinaire
+**Valeur actuelle d'une annuité ordinaire**
 
 La valeur actuelle d'une annuité ordinaire (VA) est la somme des valeurs actuelles de tous les paiements futurs.
 
@@ -36,12 +36,13 @@ La valeur actuelle d'une annuité ordinaire (VA) est la somme des valeurs actuel
     VA = PMT \cdot \left( \frac{1 - (1 + r)^{-n}}{r} \right)
 
 où:
+
 -   *VA* : Valeur actuelle de l'annuité
 -   *PMT* : Paiement périodique
 -   *r* : Taux d'intérêt par période
 -   *n* : Nombre de périodes
 
-### Valeur actuelle d'une annuité anticipée
+**Valeur actuelle d'une annuité anticipée**
 
 La valeur actuelle d'une annuité anticipée est calculée en ajustant la valeur actuelle d'une annuité ordinaire.
 
@@ -49,7 +50,7 @@ La valeur actuelle d'une annuité anticipée est calculée en ajustant la valeur
 
     VA = PMT \cdot \left( \frac{1 - (1 + r)^{-n}}{r} \right) \cdot (1 + r)
 
-### Valeur future d'une annuité ordinaire
+**Valeur future d'une annuité ordinaire**
 
 La valeur future d'une annuité ordinaire (VF) est la somme des valeurs futures de tous les paiements effectués.
 
@@ -58,12 +59,13 @@ La valeur future d'une annuité ordinaire (VF) est la somme des valeurs futures 
     VF = PMT \cdot \left( \frac{(1 + r)^n - 1}{r} \right)
 
 où:
+
 -   *VF* : Valeur future de l'annuité
 -   *PMT* : Paiement périodique
 -   *r* : Taux d'intérêt par période
 -   *n* : Nombre de périodes
 
-### Valeur future d'une annuité anticipée
+**Valeur future d'une annuité anticipée**
 
 La valeur future d'une annuité anticipée est calculée en ajustant la valeur future d'une annuité ordinaire.
 
@@ -71,7 +73,7 @@ La valeur future d'une annuité anticipée est calculée en ajustant la valeur f
 
     VF = PMT \cdot \left( \frac{(1 + r)^n - 1}{r} \right) \cdot (1 + r)
 
-### Valeur actuelle d'une annuité perpétuelle
+**Valeur actuelle d'une annuité perpétuelle**
 
 Une annuité perpétuelle est une série de paiements qui continue indéfiniment. Sa valeur actuelle est calculée comme suit :
 
@@ -82,7 +84,7 @@ Une annuité perpétuelle est une série de paiements qui continue indéfiniment
 Exemples de calculs des annuités
 --------------------------------------
 
-### Exemple de calcul de la valeur actuelle d'une annuité ordinaire
+**Exemple de calcul de la valeur actuelle d'une annuité ordinaire**
 
 Supposons qu'un investisseur souhaite connaître la valeur actuelle d'une série de paiements annuels de 1 000 € sur 10 ans, avec un taux d'intérêt annuel de 5 %.
 
@@ -96,7 +98,7 @@ Supposons qu'un investisseur souhaite connaître la valeur actuelle d'une série
     valeur_actuelle_annuite = paiement_periodique * ((1 - (1 + taux_interet) ** -nombre_periodes) / taux_interet)
     print(f'Valeur Actuelle de l\'Annuite: {valeur_actuelle_annuite}')
 
-### Exemple de calcul de la valeur future d'une annuité ordinaire
+**Exemple de calcul de la valeur future d'une annuité ordinaire**
 
 Supposons qu'un investisseur souhaite connaître la valeur future d'une série de paiements annuels de 1 000 € sur 10 ans, avec un taux d'intérêt annuel de 5 %.
 
@@ -110,7 +112,7 @@ Supposons qu'un investisseur souhaite connaître la valeur future d'une série d
     valeur_future_annuite = paiement_periodique * ((1 + taux_interet) ** nombre_periodes - 1) / taux_interet
     print(f'Valeur Future de l\'Annuite: {valeur_future_annuite}')
 
-### Exemple de calcul de la valeur actuelle d'une annuité perpétuelle
+**Exemple de calcul de la valeur actuelle d'une annuité perpétuelle**
 
 Supposons qu'un investisseur souhaite connaître la valeur actuelle d'une série de paiements annuels de 1 000 € indéfiniment, avec un taux d'intérêt annuel de 5 %.
 
@@ -128,7 +130,7 @@ Calculs d'annuités avec tables de mortalité
 
 Dans certaines applications actuarielles, les calculs d'annuités prennent en compte la probabilité de survie de l'individu, basée sur des tables de mortalité.
 
-### Exemple de calcul de la valeur actuelle d'une annuité viagère
+**Exemple de calcul de la valeur actuelle d'une annuité viagère**
 
 Supposons qu'un individu souhaite connaître la valeur actuelle d'une rente viagère de 10 000 € par an, avec un taux d'intérêt de 3 %, en utilisant une table de mortalité simplifiée.
 
