@@ -48,7 +48,7 @@ html_logo = "_static/log.png"
 html_favicon = "_static/log.png"
 html_sourcelink_suffix = ""
 html_last_updated_fmt = ""
-html_title = "JG's World"
+html_title = "Actu-Basics"
 
 # PyData theme customization
 html_theme_options = {
@@ -56,7 +56,7 @@ html_theme_options = {
     "icon_links": [
         {
             "name": "Twitter",
-            "url": "https://twitter.com/PyData",
+            "url": "https://twitter.com/JohnGABARY",
             "icon": "fa-brands fa-twitter",
         },
         {
@@ -82,7 +82,7 @@ html_theme_options = {
     ],
     "logo": {
         "text": "Actu-Basics",
-        "image_dark": "_static/log2.png",
+        "image_dark": "_static/log.png",
     },
     "use_edit_page_button": True,
     "show_toc_level": 10,
