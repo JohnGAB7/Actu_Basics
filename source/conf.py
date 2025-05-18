@@ -48,7 +48,7 @@ html_logo = "_static/log.png"
 html_favicon = "_static/log.png"
 html_sourcelink_suffix = ""
 html_last_updated_fmt = ""
-html_title = ""
+html_title = "Actu-Basics By JG"
 
 # PyData theme customization
 html_theme_options = {
@@ -82,7 +82,7 @@ html_theme_options = {
     ],
     "logo": {
         "text": "Actu-Basics",
-        "image_dark": "_static/log.png",
+        "image_dark": "_static/log2.png",
     },
     "use_edit_page_button": True,
     "show_toc_level": 10,
