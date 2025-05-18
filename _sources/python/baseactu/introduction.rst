@@ -1,224 +1,279 @@
-Rappels Clés
-===============
+Rappels Clés : Mesures de l'intérêt
+===============================
 
-Les mathématiques financières sont une branche des mathématiques appliquées qui traite des problèmes liés aux marchés financiers, aux investissements, aux emprunts et à la gestion des risques. Voici quelques concepts clés :
+Introduction
+--------------
+Les mesures d'intérêt jouent un rôle fondamental dans la finance et l'économie. Comprendre les différents types d'intérêt et savoir calculer la valeur des investissements est essentiel pour les étudiants en actuariat.
 
-Valeur actuelle et valeur future
-------------------------------------
+L'intérêt
+-----------
+L'intérêt est la compensation accordée au détenteur d'un capital qui accepte de s'en dessaisir temporairement pour le mettre à la disposition d'une personne physique ou morale.
 
-La valeur actuelle (VA) est la valeur aujourd'hui d'une somme d'argent qui sera reçue ou payée à une date future. La valeur future (VF) est la valeur à une date future d'une somme d'argent investie ou empruntée aujourd'hui.
+Le taux d'intérêt effectif
+----------------------------
+Le taux d'intérêt effectif :math:`i` est le montant d'intérêt produit par le placement d'un capital unitaire (1 €) sur une période (i.e. par unité de temps).
 
-**Formules de base**
+Fonction d'accumulation et valeur accumulée
+---------------------------------------------
+Pour un placement d'une valeur initiale de 1 €, soit la fonction d'accumulation :math:`a(t)`.
 
-La formule de la valeur future est :
+- :math:`a(0) = 1`
+- :math:`a(t)` est croissante (si :math:`i > 0`) et continue lorsque l'intérêt est accumulé de manière continue.
+- Aussi, :math:`i = a(1) - 1 = a(1) - a(0)` et :math:`a(1) = 1 + i`.
 
-.. math::
+Pour un placement d'une valeur initiale :math:`K`, la valeur accumulée :math:`A(t)` est donnée par :math:`A(t) = K a(t)`.
 
-    VF = VA \cdot (1 + r)^n
+- Il vient :math:`i = \frac{a(1) - a(0)}{a(0)} = \frac{A(1) - A(0)}{A(0)} = \frac{I_1}{A(0)}`,
+  où :math:`I_1` est le montant d'intérêt produit au cours de la première période. Ainsi, le taux d'intérêt effectif :math:`i` est le rapport entre le montant d'intérêt produit au cours de la première période :math:`I_1` et le montant initial du placement :math:`A(0)`.
 
-La formule de la valeur actuelle est :
+Le taux d'intérêt effectif :math:`i_t`
+---------------------------------------
+Le taux d'intérêt effectif peut varier avec le temps. Ainsi, le taux d'intérêt effectif relatif à l'intervalle de temps unitaire (période) \([t - 1; t]\) est dénoté :math:`i_t`. Celui-ci est donné par
 
-.. math::
+- :math:`i_t = \frac{I_t}{A(t - 1)} = \frac{A(t) - A(t - 1)}{A(t - 1)} = \frac{a(t) - a(t - 1)}{a(t - 1)}`.
 
-    VA = \frac{VF}{(1 + r)^n}
+Comportement de :math:`a(t)`
+-----------------------------
+Il existe deux types d'intérêt :
 
-où:
+- Intérêt simple : Un placement est dit à intérêts simples si les intérêts qu'il produit sont proportionnels à la durée du placement.
+- Intérêt composé : Un placement est dit à intérêts composés si les intérêts qu'il produit sont périodiquement capitalisés, c'est-à-dire incorporés au capital pour produire eux-mêmes des intérêts.
 
--   *VF* : Valeur future
--   *VA* : Valeur actuelle
--   *r* : Taux d'intérêt par période
--   *n* : Nombre de périodes
+Intérêt simple
+-----------------
+La valeur accumulée en :math:`t` par le placement s'élève à :math:`a(t) = 1 + it ; t \geq 0`.
 
-**Exemple de calcul**
+- Les intérêts ne sont pas incorporés périodiquement au capital pour produire eux-mêmes des intérêts.
 
-.. code-block:: python
+Le taux d'intérêt effectif :math:`i_t` est donné par
 
-    # Calcul de la valeur future
-    valeur_actuelle = 1000
-    taux_interet = 0.05
-    nombre_periodes = 10
+- :math:`i_t = \frac{a(t) - a(t - 1)}{a(t - 1)} = \frac{i}{1 + i (t - 1)}`.
 
-    valeur_future = valeur_actuelle * (1 + taux_interet) ** nombre_periodes
-    print(f'Valeur Future: {valeur_future}')
+Ainsi, en intérêt simple, le taux d'intérêt effectif varie d'une année à l'autre. Celui-ci décroît au cours du temps. En général, seuls les placements de courte durée (inférieure à un an) sont à intérêts simples.
 
-Intérêts simples et composés
---------------------------------
+Intérêt composé
+------------------
+La valeur accumulée en :math:`t` par le placement s'élève à :math:`a(t) = (1 + i)^t ; t \geq 0`.
 
-Les intérêts peuvent être calculés de deux manières : simples ou composés.
+- Les intérêts sont incorporés périodiquement au capital pour produire eux-mêmes des intérêts.
 
-**Intérêts simples**
+Le taux d'intérêt effectif :math:`i_t` est donné par
 
-Les intérêts simples sont calculés uniquement sur le montant initial investi ou emprunté.
+- :math:`i_t = \frac{a(t) - a(t - 1)}{a(t - 1)} = i`.
 
-.. math::
+Ainsi, en intérêt composé, le taux d'intérêt effectif reste constant au cours du temps. En général, les placements dont la durée est supérieure à une année sont toujours à intérêt composé.
 
-    I_{\text{simple}} = P \cdot r \cdot t
-
-où:
-
--   *I_simple* : Intérêts simples
--   *P* : Principal (montant initial)
--   *r* : Taux d'intérêt
--   *t* : Temps
-
-**Intérêts composés**
-
-Les intérêts composés sont calculés sur le montant initial ainsi que sur les intérêts accumulés des périodes précédentes.
-
-.. math::
-
-    I_{\text{compose}} = P \cdot (1 + r)^t - P
-
-où:
-
--   *I_compose* : Intérêts composés
--   *P* : Principal (montant initial)
--   *r* : Taux d'intérêt
--   *t* : Temps
-
-**Exemple de calcul**
+Exercice 1
+------------
+Soit :math:`K = 1000` €. Calculer les valeurs de :math:`A(t)` en :math:`t = 3` mois, :math:`t = 1` an et :math:`t = 3` ans pour un taux d'intérêt annuel simple de 8%. Refaire les mêmes calculs avec un taux d'intérêt annuel composé de 8%.
 
 .. code-block:: python
 
-    # Calcul des intérêts simples et composés
-    principal = 1000
-    taux_interet = 0.05
-    temps = 10
+    def simple_interest(K, r, t):
+        return K * (1 + r * t)
 
-    interets_simples = principal * taux_interet * temps
-    interets_composes = principal * ((1 + taux_interet) ** temps - 1)
+    def compound_interest(K, r, t):
+        return K * (1 + r)**t
 
-    print(f'Intérêts Simples: {interets_simples}')
-    print(f'Intérêts Composés: {interets_composes}')
+    # Parameters
+    K = 1000
+    annual_rate = 0.08
 
-Taux d'intérêt nominal et taux d'intérêt effectif
------------------------------------------------------
+    # Simple Interest
+    A_simple_3_months = simple_interest(K, annual_rate, 3/12)
+    A_simple_1_year = simple_interest(K, annual_rate, 1)
+    A_simple_3_years = simple_interest(K, annual_rate, 3)
 
-### Taux d'intérêt nominal
+    # Compound Interest
+    A_compound_3_months = compound_interest(K, annual_rate, 3/12)
+    A_compound_1_year = compound_interest(K, annual_rate, 1)
+    A_compound_3_years = compound_interest(K, annual_rate, 3)
 
-Le taux d'intérêt nominal est le taux d'intérêt annuel indiqué qui ne prend pas en compte la capitalisation des intérêts. C'est le taux que l'on voit le plus souvent dans les publicités bancaires.
+    print("Simple Interest - 3 Months:", A_simple_3_months)
+    print("Simple Interest - 1 Year:", A_simple_1_year)
+    print("Simple Interest - 3 Years:", A_simple_3_years)
+    print("Compound Interest - 3 Months:", A_compound_3_months)
+    print("Compound Interest - 1 Year:", A_compound_1_year)
+    print("Compound Interest - 3 Years:", A_compound_3_years)
 
-### Taux d'intérêt effectif
+Valeur présente (valeur actualisée)
+-------------------------------------
+Désormais, les placements considérés seront principalement à intérêts composés (sauf indication contraire). La valeur en :math:`t = 1` de :math:`1` € investi en :math:`t = 0` au taux :math:`i` est :math:`a(1) = 1 + i`.
 
-Le taux d'intérêt effectif, ou taux annuel effectif global (TAEG), prend en compte l'effet de la capitalisation des intérêts. Il représente le taux réel appliqué sur une période donnée.
+- En pratique, :math:`1 + i` est appelé facteur de capitalisation et est noté :math:`u`.
 
-La relation entre le taux nominal (r_nominal) et le taux effectif (r_effectif) est donnée par :
+Ainsi, la valeur en :math:`t` de :math:`1` € investi en :math:`t = 0` au taux :math:`i` est
 
-.. math::
+- :math:`a(t) = (1 + i)^t = u^t`.
 
-    (1 + r_{\text{effectif}}) = \left(1 + \frac{r_{\text{nominal}}}{m}\right)^m
+Inversement, le capital qu'il faut placer en :math:`t = 0` au taux :math:`i` pour que sa valeur accumulée en :math:`t = 1` soit de :math:`1` € est :math:`1 / (1+i)`.
 
-où:
+- En pratique, :math:`1 / (1+i)` est appelé facteur d'actualisation et est noté :math:`v`.
 
--   *r_nominal* : Taux d'intérêt nominal
--   *r_effectif* : Taux d'intérêt effectif
--   *m* : Nombre de périodes de capitalisation par an
+Aussi, la valeur présente de :math:`1` € au temps :math:`t` est :math:`v^t`.
 
-**Exemple de calcul**
+Exercice 2
+------------
+Soit un taux d'intérêt annuel :math:`i = 5\%`. Pierre investit :math:`K` le 6/10/2014. Sachant qu'au 6/01/2021 Pierre aura 30000 €, trouver :math:`K` si :
 
-.. code-block:: python
-
-    # Calcul du taux d'intérêt effectif
-    taux_nominal = 0.06
-    periodes_par_an = 4
-
-    taux_effectif = (1 + taux_nominal / periodes_par_an) ** periodes_par_an - 1
-    print(f'Taux d\'Intérêt Effectif: {taux_effectif}')
-
-Taux d'escompte nominal et taux d'escompte effectif
---------------------------------------------------------
-
-**Taux d'escompte nominal**
-
-Le taux d'escompte nominal est le taux utilisé pour calculer les escomptes sur une base annuelle sans tenir compte de la fréquence de l'escompte.
-
-### Taux d'escompte effectif
-
-Le taux d'escompte effectif prend en compte la fréquence de l'escompte, reflétant ainsi le taux réel appliqué sur une période donnée.
-
-La relation entre le taux d'escompte nominal (d_nominal) et le taux d'escompte effectif (d_effectif) est donnée par :
-
-.. math::
-
-    (1 - d_{\text{effectif}}) = \left(1 - \frac{d_{\text{nominal}}}{m}\right)^m
-
-où:
-
--   *d_nominal* : Taux d'escompte nominal
--   *d_effectif* : Taux d'escompte effectif
--   *m* : Nombre de périodes d'escompte par an
-
-**Exemple de calcul**
+(a) Le placement est à intérêts composés.
+(b) Le placement est à intérêts simples.
+(c) Le placement est à intérêts composés jusqu'au 6/10/2020 et à intérêts simples pour la période restante.
 
 .. code-block:: python
 
-    # Calcul du taux d'escompte effectif
-    taux_escompte_nominal = 0.06
-    periodes_par_an = 4
+    from datetime import date
 
-    taux_escompte_effectif = 1 - (1 - taux_escompte_nominal / periodes_par_an) ** periodes_par_an
-    print(f'Taux d\'Escompte Effectif: {taux_escompte_effectif}')
+    def years_between(d1, d2):
+        return (d2 - d1).days / 365.25
 
-.. Calcul des annuités
-.. ===================
+    def present_value_future_compound_value(FV, r, t):
+        return FV / (1 + r)**t
 
-.. Une annuité est une série de paiements égaux effectués à intervalles réguliers sur une période de temps. Les calculs d'annuités sont couramment utilisés pour les emprunts, les hypothèques et les investissements.
+    # Dates and Parameters
+    invest_date = date(2014, 10, 6)
+    future_date = date(2021, 1, 6)
+    future_value = 30000
+    annual_rate = 0.05
 
-.. Annuités ordinaires et annuités anticipées
-.. ------------------------------------------
+    # Calculate time in years
+    time_years = years_between(invest_date, future_date)
 
-.. Il existe deux types d'annuités : les annuités ordinaires (paiements effectués à la fin de chaque période) et les annuités anticipées (paiements effectués au début de chaque période).
+    # Calculate Present Value for Compounded Interest
+    PV_compound = present_value_future_compound_value(future_value, annual_rate, time_years)
 
-.. ### Formules de base
+    print("Present Value for Compounded Interest:", PV_compound)
 
-.. La valeur actuelle d'une annuité ordinaire est :
+Taux d'intérêt nominal
+-------------------------
+Le taux d'intérêt nominal est le taux d'intérêt annuel annoncé, qui ne tient pas compte de la capitalisation des intérêts. Lorsque les intérêts sont capitalisés plusieurs fois par an, le taux d'intérêt effectif est plus élevé que le taux nominal.
 
-.. .. math::
+La relation entre le taux d'intérêt nominal :math:`i_{nom}` et le taux d'intérêt effectif :math:`i_{eff}` pour une capitalisation :math:`m` fois par an est donnée par :
 
-..     VA_{\text{annuite}} = PMT \cdot \left( \frac{1 - (1 + r)^{-n}}{r} \right)
+.. math::
 
-.. La valeur actuelle d'une annuité anticipée est :
+    (1 + i_{eff}) = (1 + i_{nom} / m)^m
 
-.. .. math::
+Exercice 3
+----------
+Soit :math:`K = 1000` €. Calculer les valeurs de :math:`A(t)` en :math:`t = 1` an pour :
 
-..     VA_{\text{annuite}} = PMT \cdot \left( \frac{1 - (1 + r)^{-n}}{r} \right) \cdot (1 + r)
+(a) Un taux d'intérêt annuel :math:`i = 6%`.
+(b) Un taux d'intérêt mensuel :math:`i = 0.5%`.
 
-.. où:
-.. - *VA_{\text{annuite}}* : Valeur actuelle de l'annuité
-.. - *PMT* : Paiement périodique
-.. - *r* : Taux d'intérêt par période
-.. - *n* : Nombre de périodes
+.. code-block:: python
 
-.. **Exemple de calcul**
+    def nominal_to_effective(nominal_rate, periods):
+        return (1 + nominal_rate / periods)**periods - 1
 
-.. .. code-block:: python
+    K = 1000
+    annual_rate = 0.06
+    monthly_rate = 0.005
 
-..     # Calcul de la valeur actuelle d'une annuité ordinaire
-..     paiement_periodique = 1000
-..     taux_interet = 0.05
-..     nombre_periodes = 10
+    A_annual = K * (1 + annual_rate)
+    A_monthly = K * (1 + nominal_to_effective(monthly_rate, 12))
 
-..     valeur_actuelle_annuite = paiement_periodique * ((1 - (1 + taux_interet) ** -nombre_periodes) / taux_interet)
-..     print(f'Valeur Actuelle de l\'Annuite: {valeur_actuelle_annuite}')
+    print("Annual Interest:", A_annual)
+    print("Monthly Interest:", A_monthly)
 
-.. Rentes viagères
-.. ===============
+Taux d'escompte effectif
+-------------------------
+Le taux d'escompte effectif, noté :math:`d`, est utilisé pour calculer le montant net que reçoit un investisseur lorsque les intérêts sont payés en avance. L'escompte est une réduction appliquée à un montant futur pour obtenir sa valeur présente.
 
-.. Une rente viagère est une série de paiements effectués régulièrement à une personne jusqu'à son décès. Les rentes viagères sont utilisées pour les plans de retraite, les assurances vie, et les régimes de pension. Cette section couvre les types de rentes viagères, leurs formules de calcul, et des exemples concrets.
+### Formule
+La relation entre le taux d'escompte :math:`d` et le taux d'intérêt effectif :math:`i` est :
 
-.. Types de rentes viagères
-.. -------------------------
+.. math::
 
-.. Il existe plusieurs types de rentes viagères, notamment les rentes viagères simples, les rentes viagères réversibles, et les rentes viagères différées.
+    d = \frac{i}{1 + i}
 
-.. ### Rente viagère simple
+Inversement, pour obtenir le taux d'intérêt effectif à partir du taux d'escompte :
 
-.. Les paiements sont effectués régulièrement à une personne jusqu'à son décès.
+.. math::
 
-.. ### Rente viagère réversible
+    i = \frac{d}{1 - d}
 
-.. Les paiements sont effectués à une personne et continuent après son décès à une autre personne désignée (bénéficiaire), souvent à un taux réduit.
+Exemple : Si un placement offre un taux d'intérêt effectif de 5%, le taux d'escompte correspondant est :
 
-.. ### Rente viagère différée
+.. math::
 
-.. Les paiements commencent après une certaine période de différé et continuent jusqu'au décès de l'ass
+    d = \frac{0.05}{1 + 0.05} = 0.04762 \quad \text{(ou 4,762%)}
+
+Taux d'escompte nominal
+----------------------------
+
+Le taux d'escompte nominal, noté :math:`d(m)`, est utilisé lorsque l'escompte est fractionné. Par exemple, si l'escompte est appliqué mensuellement, le taux d'escompte nominal mensuel est donné par :
+
+.. math::
+
+    d(m) = m \left[1 - (1 - d)^{1/m}\right]
+
+Exercice 4
+------------
+Soit un taux d'escompte effectif annuel de 12%. Calculer le taux d'escompte nominal mensuel correspondant et le taux d'intérêt effectif annuel équivalent.
+
+.. code-block:: python
+
+    def effective_to_nominal_discount(effective_rate, periods):
+        return periods * (1 - (1 - effective_rate)**(1 / periods))
+
+    def discount_to_interest(discount_rate):
+        return discount_rate / (1 - discount_rate)
+
+    # Parameters
+    annual_effective_discount = 0.12
+    periods = 12
+
+    # Calculate nominal discount rate and equivalent interest rate
+    monthly_nominal_discount = effective_to_nominal_discount(annual_effective_discount, periods)
+    annual_effective_interest = discount_to_interest(annual_effective_discount)
+
+    print("Monthly Nominal Discount Rate:", monthly_nominal_discount)
+    print("Equivalent Annual Effective Interest Rate:", annual_effective_interest)
+
+Force d'intérêt et d'escompte
+------------------------------
+La force d'intérêt, notée :math:`\delta`, est une mesure continue de la croissance d'un investissement. Elle est particulièrement utile lorsque les intérêts sont composés en continu.
+
+La relation entre la force d'intérêt et le taux d'intérêt effectif est donnée par :
+
+.. math::
+
+    \delta = \ln(1 + i)
+
+De manière similaire, la force d'escompte est utilisée pour les calculs de valeur présente lorsque les escomptes sont appliqués de manière continue. La relation est :
+
+.. math::
+
+    \delta = -\ln(1 - d)
+
+Exemple : Si le taux d'intérêt effectif est de 5%, la force d'intérêt est :
+
+.. math::
+
+    \delta = \ln(1 + 0.05) \approx 0.04879
+
+Exercice 5
+------------
+Soit un taux d'intérêt effectif :math:`i = 5%`. Trouver le taux d'intérêt nominal :math:`i (m)` équivalent pour :math:`m = 2`, :math:`6`, :math:`12`, :math:`52`, :math:`365`.
+
+.. code-block:: python
+
+    import math
+
+    def effective_to_nominal(effective_rate, periods):
+        return periods * (math.exp(effective_rate / periods) - 1)
+
+    # Parameters
+    effective_rate = 0.05
+    periods_list = [2, 6, 12, 52, 365]
+
+    # Calculate nominal rates
+    nominal_rates = {periods: effective_to_nominal(effective_rate, periods) for periods in periods_list}
+
+    for periods, nominal_rate in nominal_rates.items():
+        print(f"Nominal Rate for {periods} periods: {nominal_rate:.6f}")
+
+Conclusion
+------------
+La compréhension des mesures d'intérêt est fondamentale pour les actuaires et les professionnels de la finance. Les concepts d'intérêt simple et composé, la valeur présente, ainsi que les taux nominaux et effectifs, sont des outils essentiels pour évaluer et gérer les investissements. Les exercices pratiques en Python permettent d'appliquer ces concepts théoriques à des situations réelles, renforçant ainsi la compréhension et la compétence des étudiants en actuariat.
