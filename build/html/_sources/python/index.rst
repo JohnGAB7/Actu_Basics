@@ -1,6 +1,7 @@
 .. _python-index:
 .. image:: _static/pylogo.png
     :alt: Logo python
+    :width: 25%
 
 Python
 =========

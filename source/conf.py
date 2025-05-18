@@ -9,9 +9,9 @@ from sphinx.application import Sphinx
 sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
-project = 'ActuBasics'
+project = 'Actu-Basics'
 author = 'John GABARY'
-copyright = '2024, {John GABARY}'
+copyright = '2024, John GABARY'
 
 # -- General configuration ---------------------------------------------------
 extensions = [
@@ -48,6 +48,7 @@ html_logo = "_static/log.png"
 html_favicon = "_static/log.png"
 html_sourcelink_suffix = ""
 html_last_updated_fmt = ""
+html_title = "JG's World"
 
 # PyData theme customization
 html_theme_options = {
@@ -103,6 +104,59 @@ html_context = {
     "github_version": "main",
     "doc_path": "docs",
 }
+
+rediraffe_redirects = {
+    "contributing.rst": "community/index.rst",
+}
+
+# Add any paths that contain custom static files (such as style sheets) here,
+# relative to this directory. They are copied after the builtin static files,
+# so a file named "default.css" will overwrite the builtin "default.css".
+html_static_path = ["_static"]
+html_css_files = ["custom.css"]
+todo_include_todos = True
+
+# -- favicon options ---------------------------------------------------------
+
+# see https://sphinx-favicon.readthedocs.io for more information about the
+# sphinx-favicon extension
+favicons = [
+    # generic icons compatible with most browsers
+    "favicon-32x32.png",
+    "favicon-16x16.png",
+    {"rel": "shortcut icon", "sizes": "any", "href": "favicon.ico"},
+    # chrome specific
+    "android-chrome-192x192.png",
+    # apple icons
+    {"rel": "mask-icon", "color": "#459db9", "href": "safari-pinned-tab.svg"},
+    {"rel": "apple-touch-icon", "href": "apple-touch-icon.png"},
+    # msapplications
+    {"name": "msapplication-TileColor", "content": "#459db9"},
+    {"name": "theme-color", "content": "#ffffff"},
+    {"name": "msapplication-TileImage", "content": "mstile-150x150.png"},
+]
+
+
+# -- Options for autosummary/autodoc output ------------------------------------
+autosummary_generate = True
+autodoc_typehints = "description"
+autodoc_member_order = "groupwise"
+
+# -- Localization settings ---------------------------------------------------
+locale_dirs = ['locale/']
+gettext_compact = False
+
+# -- Extensions configuration ------------------------------------------------
+
+# Napoleon settings for docstring style
+napoleon_google_docstring = True
+napoleon_numpy_docstring = True
+napoleon_include_init_with_doc = False
+napoleon_include_private_with_doc = False
+napoleon_include_special_with_doc = True
+napoleon_use_param = True
+napoleon_use_rtype = True
+
 
 rediraffe_redirects = {
     "contributing.rst": "community/index.rst",
@@ -222,4 +276,3 @@ epub_exclude_files = ['search.html']
 
 # Optional back to top button in HTML
 # "back_to_top_button": True, 
-

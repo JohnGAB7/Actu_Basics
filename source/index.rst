@@ -2,6 +2,7 @@
 
 .. image:: _static/log.png  
    :alt: Logo Actu-Basics
+   :width: 25%
 
 Actu-Basics
 ===========
