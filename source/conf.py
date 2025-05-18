@@ -11,7 +11,7 @@ sys.path.insert(0, os.path.abspath('.'))
 # -- Project information -----------------------------------------------------
 project = 'Actu-Basics'
 author = 'John GABARY'
-copyright = '2024, John GABARY'
+copyright = '2025, John GABARY'
 
 # -- General configuration ---------------------------------------------------
 extensions = [
@@ -48,7 +48,7 @@ html_logo = "_static/log.png"
 html_favicon = "_static/log.png"
 html_sourcelink_suffix = ""
 html_last_updated_fmt = ""
-html_title = "Actu-Basics"
+html_title = ""
 
 # PyData theme customization
 html_theme_options = {
@@ -88,6 +88,7 @@ html_theme_options = {
     "show_toc_level": 10,
     "navbar_align": "left",
     "show_nav_level": 2 ,
+    "show_version_warning_banner": True,
     "footer_start": ["copyright"],
     "footer_center": ["sphinx-version"],
     "secondary_sidebar_items": {
