@@ -1,12 +1,5 @@
 .. _Actu-Basics:
 
-.. image:: _static/log.png  
-   :alt: Logo Actu-Basics
-   :width: 25%
-
-Actu-Basics
-===========
-
 Bienvenue dans mon projet Actu-Basics. Ce projet a pour objectif de fournir une compréhension approfondie des langages de programmation essentiels pour les actuaires et data scientists. Ces langages jouent un rôle clé dans la manipulation des données, la modélisation des risques, et la prise de décision éclairée dans les domaines de l'actuariat et de la data science. À travers ce projet, vous découvrirez les langages de programmation les plus utilisés et les plus adaptés pour exceller dans ces professions.
 
 Les compétences en programmation et en analyse des données sont essentielles pour exceller dans le domaine de l'actuariat et de la data science. Ce projet se concentre sur les langages les plus pertinents, chacun ayant des applications spécifiques et des avantages pour l’analyse des données, la modélisation statistique, et l'automatisation des processus.
