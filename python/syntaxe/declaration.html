@@ -631,25 +631,25 @@
 <li><p><strong>Marquer les sections importantes</strong> : Utilisez des commentaires pour signaler des sections importantes du code, telles que les initialisations, les boucles principales, ou les blocs de code critiques.</p></li>
 <li><p><strong>Fournir des exemples d’utilisation</strong> : Ajoutez des commentaires avec des exemples d’utilisation du code, montrant comment appeler une fonction ou utiliser une classe.</p></li>
 </ul>
-<p><strong>Exemple d’utilisation:</strong>
-.. code-block:: python</p>
-<blockquote>
-<div><dl>
-<dt>def calculer_somme(a, b):</dt><dd><p>« «  »
-Cette fonction calcule la somme de deux nombres.</p>
-<p>Args:
-a (int, float): Le premier nombre.
-b (int, float): Le deuxième nombre.</p>
-<p>Returns:
-int, float: La somme des deux nombres.</p>
-<p>Exemple :
-&gt;&gt;&gt; calculer_somme(5, 3)
-8
-« «  »
-return a + b</p>
-</dd>
-</dl>
-</div></blockquote>
+<p><strong>Exemple d’utilisation</strong> :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculer_somme</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Cette fonction calcule la somme de deux nombres.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">    a (int, float): Le premier nombre.</span>
+<span class="sd">    b (int, float): Le deuxième nombre.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    int, float: La somme des deux nombres.</span>
+
+<span class="sd">    Exemple :</span>
+<span class="sd">    &gt;&gt;&gt; calculer_somme(5, 3)</span>
+<span class="sd">    8</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
 <p>Voici quelques bonnes pratiques pour rédiger des commentaires efficaces :</p>
 <ul class="simple">
 <li><p><strong>Soyez concis et pertinent</strong> : Les commentaires doivent être brefs et clairs. Évitez de commenter des évidences ; commentez plutôt les parties complexes ou les choix de conception.</p></li>

@@ -108,7 +108,8 @@ Les commentaires jouent un rôle crucial dans la documentation du code. Ils aide
 - **Marquer les sections importantes** : Utilisez des commentaires pour signaler des sections importantes du code, telles que les initialisations, les boucles principales, ou les blocs de code critiques.
 - **Fournir des exemples d'utilisation** : Ajoutez des commentaires avec des exemples d'utilisation du code, montrant comment appeler une fonction ou utiliser une classe.
 
-**Exemple d'utilisation:**
+**Exemple d'utilisation** :
+
 .. code-block:: python
 
     def calculer_somme(a, b):
