@@ -82,7 +82,7 @@ html_theme_options = {
     ],
     "logo": {
         "text": "Actu-Basics",
-        "image_dark": "_static/log2.png",
+        "image_dark": "_static/log1.png",
     },
     "use_edit_page_button": True,
     "show_toc_level": 10,
