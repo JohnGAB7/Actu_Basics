@@ -1,0 +1,24 @@
+/* ACTU-BASICS custom styles */
+
+:root {
+    --actu-accent: #f5a524;
+    --actu-primary: #0b1b2b;
+}
+
+.bd-header .navbar-brand p {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.bd-page-width {
+    max-width: 90rem;
+}
+
+.sd-card:hover {
+    border-color: var(--actu-accent);
+}
+
+.bd-header-announcement {
+    background-color: var(--actu-primary);
+    color: white;
+}

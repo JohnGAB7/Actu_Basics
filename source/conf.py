@@ -3,15 +3,13 @@
 import os
 import sys
 from pathlib import Path
-from sphinx.application import Sphinx
 
-# -- Path setup --------------------------------------------------------------
 sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
-project = 'ActuBasics'
+project = 'ACTU-BASICS'
 author = 'John GABARY'
-copyright = '2024, {John GABARY}'
+copyright = '2024-2026, John GABARY'
 
 # -- General configuration ---------------------------------------------------
 extensions = [
@@ -27,121 +25,87 @@ extensions = [
     'sphinx.ext.doctest',
     'sphinx.ext.autosummary',
     'sphinx.ext.extlinks',
-    'sphinx.ext.graphviz',
-    'sphinxcontrib.plantuml',
-    'sphinxcontrib.httpdomain',
-    'numpydoc', 
-    #'sphinx_intl',
     'sphinx_tabs.tabs',
+    'sphinx_design',
 ]
 
-# Documentation language
 language = 'fr'
 
-# Template paths and exclusion patterns
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # -- HTML output options -----------------------------------------------------
 html_theme = "pydata_sphinx_theme"
-html_logo = "_static/log.png"
-html_favicon = "_static/log.png"
+html_logo = "_static/actu-basics-logo-light.png"
+html_favicon = "_static/actu-basics-logo-light.png"
 html_sourcelink_suffix = ""
 html_last_updated_fmt = ""
+html_title = "ACTU-BASICS"
 
-# PyData theme customization
 html_theme_options = {
-    "header_links_before_dropdown": 4,
+    "header_links_before_dropdown": 5,
     "icon_links": [
         {
-            "name": "Twitter",
-            "url": "https://twitter.com/PyData",
-            "icon": "fa-brands fa-twitter",
+            "name": "YouTube (FR)",
+            "url": "https://www.youtube.com/channel/UC3MrzU4G6UnSfDsYSci9BuQ",
+            "icon": "fa-brands fa-youtube",
+        },
+        {
+            "name": "YouTube (EN)",
+            "url": "https://www.youtube.com/channel/UC9AkR6xNGl9S9XHuFnbFCGg",
+            "icon": "fa-brands fa-youtube",
+        },
+        {
+            "name": "TikTok (FR)",
+            "url": "https://www.tiktok.com/@actu_basics_fr",
+            "icon": "fa-brands fa-tiktok",
+        },
+        {
+            "name": "TikTok (EN)",
+            "url": "https://www.tiktok.com/@actu_basics",
+            "icon": "fa-brands fa-tiktok",
         },
         {
             "name": "GitHub",
             "url": "https://github.com/JohnGAB7",
             "icon": "fa-brands fa-github",
         },
-        {
-            "name": "Facebook",
-            "url": "https://www.facebook.com/NivekJGL/",
-            "icon": "fa-brands fa-facebook",
-        },
-        {
-            "name": "Instagram",
-            "url": "https://www.instagram.com/yourusername/",
-            "icon": "fa-brands fa-instagram",
-        },
     ],
     "logo": {
-        "text": "ActuBasics",
-        "image_dark": "_static/log.png",
+        "text": "ACTU-BASICS",
+        "image_light": "_static/actu-basics-logo-light.png",
+        "image_dark": "_static/actu-basics-logo-dark.png",
     },
     "use_edit_page_button": True,
-    "show_toc_level": 1,
+    "show_toc_level": 2,
     "navbar_align": "left",
-    "announcement": "Bienvenue sur ma page destinée à l'apprentissage de logiciels pour L'Actuaire|Data Scientist",
-    "show_version_warning_banner": True,
+    "announcement": "Eveiller par les chiffres - Enlightening through numbers",
+    "show_version_warning_banner": False,
     "footer_start": ["copyright"],
     "footer_center": ["sphinx-version"],
-    "secondary_sidebar_items": {
-        #"**/*": ["page-toc", "edit-this-page", "sourcelink"],
-        "examples/no-sidebar": [],
-    },
 }
 
 html_context = {
-    "github_user": "pydata",
-    "github_repo": "pydata-sphinx-theme",
+    "github_user": "JohnGAB7",
+    "github_repo": "Actu_Basics",
     "github_version": "main",
-    "doc_path": "docs",
+    "doc_path": "source",
 }
 
-rediraffe_redirects = {
-    "contributing.rst": "community/index.rst",
-}
-
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
 todo_include_todos = True
 
-# -- favicon options ---------------------------------------------------------
-
-# see https://sphinx-favicon.readthedocs.io for more information about the
-# sphinx-favicon extension
-favicons = [
-    # generic icons compatible with most browsers
-    "favicon-32x32.png",
-    "favicon-16x16.png",
-    {"rel": "shortcut icon", "sizes": "any", "href": "favicon.ico"},
-    # chrome specific
-    "android-chrome-192x192.png",
-    # apple icons
-    {"rel": "mask-icon", "color": "#459db9", "href": "safari-pinned-tab.svg"},
-    {"rel": "apple-touch-icon", "href": "apple-touch-icon.png"},
-    # msapplications
-    {"name": "msapplication-TileColor", "content": "#459db9"},
-    {"name": "theme-color", "content": "#ffffff"},
-    {"name": "msapplication-TileImage", "content": "mstile-150x150.png"},
-]
-
-
-# -- Options for autosummary/autodoc output ------------------------------------
+# -- Autosummary / autodoc ---------------------------------------------------
 autosummary_generate = True
 autodoc_typehints = "description"
 autodoc_member_order = "groupwise"
 
-# -- Localization settings ---------------------------------------------------
+# -- Localization ------------------------------------------------------------
 locale_dirs = ['locale/']
 gettext_compact = False
 
-# -- Extensions configuration ------------------------------------------------
-
-# Napoleon settings for docstring style
+# -- Napoleon ----------------------------------------------------------------
 napoleon_google_docstring = True
 napoleon_numpy_docstring = True
 napoleon_include_init_with_doc = False
@@ -150,61 +114,10 @@ napoleon_include_special_with_doc = True
 napoleon_use_param = True
 napoleon_use_rtype = True
 
-
-# -- application setup -------------------------------------------------------
-
-
-def setup_to_main(
-    app: Sphinx, pagename: str, templatename: str, context, doctree
-) -> None:
-    """Add a function that jinja can access for returning an "edit this page" link pointing to `main`."""
-
-    def to_main(link: str) -> str:
-        """Transform "edit on github" links and make sure they always point to the main branch.
-
-        Args:
-            link: the link to the github edit interface
-
-        Returns:
-            the link to the tip of the main branch for the same file
-        """
-        links = link.split("/")
-        idx = links.index("edit")
-        return "/".join(links[: idx + 1]) + "/main/" + "/".join(links[idx + 2 :])
-
-    context["to_main"] = to_main
-
-
-def setup(app: Sphinx) -> Dict[str, Any]:
-    """Add custom configuration to sphinx app.
-
-    Args:
-        app: the Sphinx application
-    Returns:
-        the 2 parallel parameters set to ``True``.
-    """
-    app.connect("html-page-context", setup_to_main)
-
-    return {
-        "parallel_read_safe": True,
-        "parallel_write_safe": True,
-    }
-
-
-
-# MathJax for mathematical notation
+# -- MathJax -----------------------------------------------------------------
 mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
 
-
-# Graphviz and PlantUML settings
-graphviz_output_format = 'svg'
-inheritance_graph_attrs = dict(rankdir="LR", fontsize=14, ratio="compress")
-plantuml = 'java -jar /path/to/plantuml.jar'  # Update the path to PlantUML
-
-# -- LaTeX and other output formats ------------------------------------------
-
-# Define the main document file (typically index.rst)
-
+# -- LaTeX / epub ------------------------------------------------------------
 latex_elements = {
     'papersize': 'a4paper',
     'pointsize': '10pt',
@@ -213,7 +126,3 @@ latex_elements = {
 
 epub_title = project
 epub_exclude_files = ['search.html']
-
-# Optional back to top button in HTML
-# "back_to_top_button": True, 
-
