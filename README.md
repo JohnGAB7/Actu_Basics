@@ -1,28 +1,41 @@
-# Actu-Basics  
+# ACTU-BASICS
 
-🌍 **Accéder au site** : [https://johngab7.github.io/Actu_Basics/](https://johngab7.github.io/Actu_Basics/)  
+Site documentation de la chaine educative **ACTU-BASICS**
+(statistiques, probabilites, actuariat) : *Eveiller par les chiffres* -
+*Enlightening through numbers*.
 
-## 📌 Description  
-**Actu-Basics** est un projet éducatif dédié aux langages de programmation essentiels pour les **actuaires** et **data scientists**. Il offre une analyse approfondie des outils clés utilisés dans la modélisation des risques, l’analyse de données, et la prise de décision statistique.  
+Site en ligne : https://johngab7.github.io/Actu_Basics/
 
-## 🎯 Objectif  
-Aider les professionnels et étudiants à :  
-- Comprendre les forces de chaque langage (Python, R, SQL, etc.)  
-- Choisir les outils adaptés à leurs projets  
-- Maîtriser des cas d’usage concrets en actuariat et data science  
+## Contenu
 
-## 🛠 Langages Couverts  
-| Langage | Domaine d'excellence | Bibliothèques/Outils |  
-|---------|----------------------|----------------------|  
-| **Python** | Analyse de données, Machine Learning | Pandas, NumPy, Scikit-learn |  
-| **R** | Statistiques avancées, Visualisation | ggplot2, dplyr, Shiny |  
-| **SQL** | Gestion de bases de données | MySQL, PostgreSQL, SQLite |  
-| **SAS** | Modélisation financière, Risques | SAS/STAT, SAS Enterprise Miner |  
-| **MATLAB** | Calculs numériques, Simulations | Simulink, Financial Toolbox |  
-| **Julia** | Calcul haute performance, Big Data | JuliaDB, Flux.jl |  
+- **Parcours Actuariat** (A0 a A9, 11 modules)
+- **Niveau 1 Statistiques** (23 lecons publiees)
+- **Fiches telechargeables** (PDF, tableurs, R, Python)
+- **References techniques** (Python, R, SQL, SAS, MATLAB, Julia)
 
-## ✨ Fonctionnalités  
-- **Guides comparatifs** des langages  
-- **Exemples pratiques** avec snippets de code  
-- **Cas d’usage sectoriels** (assurance, finance, santé)  
-- **Ressources pédagogiques** (tutoriels, documentation)  
+## Construire le site localement
+
+```bash
+pip install sphinx pydata-sphinx-theme sphinx-design sphinx-tabs numpydoc
+sphinx-build -b html source build/html
+```
+
+## Publication (pas de GitHub Actions)
+
+Le HTML est construit en local puis commite dans `docs/` avec un
+fichier `.nojekyll`. GitHub Pages est configure pour servir le dossier
+`/docs` de la branche `main` (Settings > Pages > Deploy from a branch
+> `main` / `/docs`). Aucun workflow Actions n'est utilise, ce qui
+preserve les credits.
+
+## Mise a jour du site
+
+1. Modifier les fichiers `.rst` dans `source/`.
+2. Lancer `sphinx-build -b html source build/html`.
+3. Synchroniser : `rm -rf docs && mkdir docs && cp -r build/html/. docs/ && touch docs/.nojekyll`.
+4. Commiter la source et `docs/` ensemble, pousser sur `main`.
+
+## Licence et credits
+
+Projet ACTU-BASICS par John GABARY. Depot miroir du programme editorial :
+https://github.com/johngab7/le-monde-en-chiffres
