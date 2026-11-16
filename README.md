@@ -4,7 +4,11 @@ Site documentation de la chaine educative **ACTU-BASICS**
 (statistiques, probabilites, actuariat) : *Eveiller par les chiffres* -
 *Enlightening through numbers*.
 
-Site en ligne : https://johngab7.github.io/Actu_Basics/
+> **Dépôt archivé.** Le site officiel ACTU-BASICS est désormais https://johngab7.github.io/Actu-Basics/
+> (dépôt JohnGAB7/Actu-Basics). Les pages de ce site renvoient automatiquement vers la nouvelle adresse.
+> Les sources Sphinx restent dans `source/` pour mémoire.
+
+Ancienne adresse : https://johngab7.github.io/Actu_Basics/
 
 ## Contenu
 
